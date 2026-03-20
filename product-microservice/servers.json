@@ -1,0 +1,13 @@
+{
+    "Servers": {
+        "1": {
+            "Name": "Products DB",
+            "Group": "Servers",
+            "Host": "postgres_db",
+            "Port": 5432,
+            "MaintenanceDB": "products_db",
+            "Username": "admin",
+            "SSLMode": "prefer"
+        }
+    }
+}

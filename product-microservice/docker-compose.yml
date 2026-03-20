@@ -29,6 +29,8 @@ services:
       - postgres_db
     networks:
       - ecommerce-network
+    volumes:
+      - ./servers.json:/pgadmin4/servers.json
 
 networks:
   ecommerce-network:

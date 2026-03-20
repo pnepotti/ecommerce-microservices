@@ -4,4 +4,7 @@ import com.paulonepotti.ecommerce.product_microservice.domain.model.Product;
 
 public interface CreateProductUseCase {
     Product createProduct(Product product);
+    Product updateProduct(Product product);
+    void deleteProduct(Long id);
+    Product getProductById(Long id);
 }

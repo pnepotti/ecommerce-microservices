@@ -8,6 +8,9 @@ public class Product {
     private Double price;
     private Integer stock;
 
+    public Product() {
+    }
+
     public Product(Long id, String name, String description, Double price, Integer stock) {
         this.id = id;
         this.name = name;
@@ -16,18 +19,18 @@ public class Product {
         this.stock = stock;
     }
 
+    // Getters y setters
+
     public Long getId() {
         return id;
     }
-
     public void setId(Long id) {
         this.id = id;
-    }  
+    }
 
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
@@ -35,7 +38,6 @@ public class Product {
     public String getDescription() {
         return description;
     }
-
     public void setDescription(String description) {
         this.description = description;
     }
@@ -43,18 +45,18 @@ public class Product {
     public Double getPrice() {
         return price;
     }
-
     public void setPrice(Double price) {
         this.price = price;
     }
-
+    
     public Integer getStock() {
         return stock;
     }
-
     public void setStock(Integer stock) {
         this.stock = stock;
     }
+
+    // Otros métodos
 
     public void decreaseStock(Integer quantity) {
         if (this.stock < quantity) {

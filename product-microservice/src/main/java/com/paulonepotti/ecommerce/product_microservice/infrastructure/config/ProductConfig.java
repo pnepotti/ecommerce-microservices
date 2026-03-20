@@ -14,6 +14,5 @@ public class ProductConfig {
         // Le pasamos el adaptador de persistencia al servicio de dominio
         return new ProductService(productRepositoryPort);
     }
-
     
 }
