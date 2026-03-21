@@ -1,9 +1,5 @@
-server:
-  port: 8761 # Puerto por defecto de Eureka
-
-eureka:
-  instance:
-    hostname: localhost
-  client:
-    register-with-eureka: false # No se registra a sí mismo
-    fetch-registry: false       # No necesita descargar el registro
+spring:
+  application:
+    name: discovery-server
+  config:
+    import: "optional:configserver:http://localhost:8888" # Importa la configuración desde el Config Server
