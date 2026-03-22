@@ -10,7 +10,7 @@
 	<groupId>com.paulonepotti.ecommerce</groupId>
 	<artifactId>discovery-server</artifactId>
 	<name>discovery-server</name>
-	<description>Microservices discover server</description>
+	<description/>
 	<properties>
 		<spring-cloud.version>2025.1.0</spring-cloud.version>
 	</properties>
