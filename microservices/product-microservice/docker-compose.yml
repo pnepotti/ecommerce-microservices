@@ -11,10 +11,25 @@ services:
       POSTGRES_DB: ${POSTGRES_DB}
     ports:
       - "5432:5432"
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
     networks:
       - ecommerce-network
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  orders_db:
+    image: postgres:16-alpine
+    container_name: orders_ms_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: adminpassword
+      POSTGRES_DB: orders_db
+    ports:
+      - "5433:5432" # Puerto 5433 para no chocar con el de productos
+    networks:
+      - ecommerce-network
+    volumes:
+      - orders_data:/var/lib/postgresql/data
 
   pgadmin:
     image: dpage/pgadmin4
@@ -38,3 +53,4 @@ networks:
 
 volumes:
   postgres_data:
+  orders_data:
