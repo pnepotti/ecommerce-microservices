@@ -15,6 +15,13 @@ public class Order {
         this.totalAmount = calculateTotal();
     }
 
+    public Order(Long id, String userEmail, List<OrderItem> items, Double totalAmount) {
+        this.id = id;
+        this.userEmail = userEmail;
+        this.items = items;
+        this.totalAmount = totalAmount;
+    }
+
     private Double calculateTotal() {
         return items.stream()
                 .mapToDouble(OrderItem::getSubtotal)
