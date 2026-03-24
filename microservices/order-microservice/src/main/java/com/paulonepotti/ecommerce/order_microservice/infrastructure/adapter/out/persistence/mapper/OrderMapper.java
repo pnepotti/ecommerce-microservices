@@ -1,4 +1,4 @@
-package com.paulonepotti.ecommerce.order_microservice.infrastructure.adapter.out.rest.mapper;
+package com.paulonepotti.ecommerce.order_microservice.infrastructure.adapter.out.persistence.mapper;
 
 import com.paulonepotti.ecommerce.order_microservice.domain.model.Order;
 import com.paulonepotti.ecommerce.order_microservice.infrastructure.adapter.out.persistence.OrderEntity;
