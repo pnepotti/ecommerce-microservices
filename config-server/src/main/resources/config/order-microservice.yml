@@ -1,5 +1,13 @@
 server:
   port: 8082
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/orderdb
+    username: admin
+    password: admin
+  jpa:
+    hibernate:
+      ddl-auto: update # Cambiar a 'validate' o 'none' en producción
 eureka:
   client:
     service-url:

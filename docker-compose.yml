@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  postgres_db:
+  product_db:
     image: postgres:16-alpine
     container_name: product_ms_postgres
     restart: always
@@ -16,14 +16,14 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
-  orders_db:
+  order_db:
     image: postgres:16-alpine
-    container_name: orders_ms_postgres
+    container_name: order_ms_postgres
     restart: always
     environment:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: adminpassword
-      POSTGRES_DB: orders_db
+      POSTGRES_DB: orderdb
     ports:
       - "5433:5432" # Puerto 5433 para no chocar con el de productos
     networks:
