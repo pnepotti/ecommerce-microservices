@@ -14,7 +14,7 @@ services:
     networks:
       - ecommerce-network
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - products_data:/var/lib/postgresql/data
 
   order_db:
     image: postgres:16-alpine
@@ -33,7 +33,7 @@ services:
 
   pgadmin:
     image: dpage/pgadmin4
-    container_name: product_ms_pgadmin
+    container_name: ecommerce_ms_pgadmin
     restart: always
     environment:
       PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
@@ -41,7 +41,8 @@ services:
     ports:
       - "5050:80"
     depends_on:
-      - postgres_db
+      - product_db
+      - order_db
     networks:
       - ecommerce-network
     volumes:
@@ -52,5 +53,5 @@ networks:
     driver: bridge
 
 volumes:
-  postgres_data:
+  products_data:
   orders_data:

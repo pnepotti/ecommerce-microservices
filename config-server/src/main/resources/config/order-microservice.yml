@@ -2,9 +2,9 @@ server:
   port: 8082
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/orderdb
+    url: jdbc:postgresql://localhost:5433/orderdb
     username: admin
-    password: admin
+    password: adminpassword
   jpa:
     hibernate:
       ddl-auto: update # Cambiar a 'validate' o 'none' en producción
