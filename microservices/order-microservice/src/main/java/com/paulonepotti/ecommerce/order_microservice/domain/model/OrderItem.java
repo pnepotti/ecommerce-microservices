@@ -2,9 +2,9 @@ package com.paulonepotti.ecommerce.order_microservice.domain.model;
 
 public class OrderItem {
     private Long id;
-    private Long productId; // Referencia por ID, no por objeto
+    private Long productId; 
     private Integer quantity;
-    private Double unitPrice; // Guardamos el precio del momento de la compra
+    private Double unitPrice; 
 
     public OrderItem(Long id, Long productId, Integer quantity, Double unitPrice) {
         this.id = id;
@@ -13,7 +13,6 @@ public class OrderItem {
         this.unitPrice = unitPrice;
     }
 
-    // Getters, Setters y lógica de subtotal
     public Long getId() {
         return id;
     }

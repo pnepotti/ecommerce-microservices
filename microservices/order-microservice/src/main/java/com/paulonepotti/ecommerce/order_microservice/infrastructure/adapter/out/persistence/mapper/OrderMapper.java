@@ -16,7 +16,6 @@ public class OrderMapper {
         entity.setUserEmail(domain.getUserEmail());
         entity.setTotalAmount(domain.getTotalAmount());
 
-        // Mapeamos la lista de ítems de dominio a entidades
         if (domain.getItems() != null) {
             entity.setItems(domain.getItems().stream()
                 .map(item -> {
@@ -34,8 +33,6 @@ public class OrderMapper {
     }
 
     public Order toDomain(OrderEntity entity) {
-        // Aquí harías el proceso inverso si necesitas devolver la orden desde la DB
-        // (Omitido por brevedad, pero sigue la misma lógica)
         return new Order(entity.getId(), entity.getUserEmail(), null, entity.getTotalAmount());
     }
 }

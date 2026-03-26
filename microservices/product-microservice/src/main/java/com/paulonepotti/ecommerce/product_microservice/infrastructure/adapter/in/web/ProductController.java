@@ -18,7 +18,6 @@ public class ProductController {
 
     @PostMapping
     public ResponseEntity<Product> createProduct(@RequestBody Product product) {
-        // Llamamos al caso de uso de nuestra capa de Aplicación
         Product createdProduct = createProductUseCase.createProduct(product);
         return new ResponseEntity<>(createdProduct, HttpStatus.CREATED);
     }

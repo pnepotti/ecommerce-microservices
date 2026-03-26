@@ -19,8 +19,6 @@ public class Product {
         this.stock = stock;
     }
 
-    // Getters y setters
-
     public Long getId() {
         return id;
     }
@@ -55,8 +53,6 @@ public class Product {
     public void setStock(Integer stock) {
         this.stock = stock;
     }
-
-    // Otros métodos
 
     public void decreaseStock(Integer quantity) {
         if (this.stock < quantity) {
