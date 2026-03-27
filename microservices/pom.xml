@@ -15,6 +15,7 @@
 	<description/>
     <packaging>pom</packaging>
     <modules>
+		<module>common-exceptions</module>
 		<module>order-microservice</module>
         <module>product-microservice</module>
     </modules>
