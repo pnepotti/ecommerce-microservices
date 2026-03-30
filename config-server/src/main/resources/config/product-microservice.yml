@@ -1,8 +1,8 @@
 server:
-  port: 8081 
+  port: 8084
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/productdb
+    url: jdbc:postgresql://localhost:5435/productdb
     username: admin
     password: admin
   jpa:

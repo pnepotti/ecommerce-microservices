@@ -1,0 +1,8 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/authdb
+  jpa:
+    hibernate:
+      ddl-auto: update # Cambiar a 'validate' o 'none' en producción
