@@ -6,13 +6,11 @@
 		<groupId>com.paulonepotti.microservices</groupId>
 		<artifactId>microservices</artifactId>
     	<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
 	</parent>
 	<artifactId>order-microservice</artifactId>
 	<name>order-microservice</name>
 	<description>Microservice of orders</description>
-	<properties>
-		<spring-cloud.version>2025.1.0</spring-cloud.version>
-	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>

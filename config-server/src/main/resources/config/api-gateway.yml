@@ -7,17 +7,26 @@ spring:
   cloud:
     gateway:
       routes:
-        # Ruta para el Microservicio de Productos
+
         - id: product-microservice
-          uri: lb://product-microservice # "lb://" le dice que use Load Balancing vía Eureka
+          uri: lb://product-microservice # Load Balancing vía Eureka
           predicates:
             - Path=/api/v1/products/**
 
-        # Ruta para el Microservicio de Órdenes
         - id: order-microservice
           uri: lb://order-microservice
           predicates:
             - Path=/api/v1/orders/**
+
+        - id: auth-microservice
+          uri: lb://auth-microservice
+          predicates:
+            - Path=/api/v1/auth/**
+
+        - id: customer-microservice
+          uri: lb://customer-microservice
+          predicates:
+            - Path=/api/v1/customers/**
 
 eureka:
   client:
