@@ -1,16 +1,14 @@
-version: '3.8'
-
 services:
   auth_db:
     image: postgres:16-alpine
     container_name: auth_ms_postgres
     restart: always
     environment:
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: adminpassword
-      POSTGRES_DB: authdb
+      POSTGRES_USER: ${POSTGRES_AUTHDB_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_AUTHDB_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_AUTHDB_DB}
     ports:
-      - "5432:5432"
+      - "${POSTGRES_AUTHDB_PORT}:5432"
     networks:
       - ecommerce-network
     volumes:
@@ -21,11 +19,11 @@ services:
     container_name: customer_ms_postgres
     restart: always
     environment:
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: adminpassword
-      POSTGRES_DB: customerdb
+      POSTGRES_USER: ${POSTGRES_CUSTOMERDB_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_CUSTOMERDB_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_CUSTOMERDB_DB}
     ports:
-      - "5433:5432"
+      - "${POSTGRES_CUSTOMERDB_PORT}:5432"
     networks:
       - ecommerce-network
     volumes:
@@ -36,11 +34,11 @@ services:
     container_name: order_ms_postgres
     restart: always
     environment:
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: adminpassword
-      POSTGRES_DB: orderdb
+      POSTGRES_USER: ${POSTGRES_ORDERDB_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_ORDERDB_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_ORDERDB_DB}
     ports:
-      - "5434:5432" # Puerto 5434 para no chocar con el de productos
+      - "${POSTGRES_ORDERDB_PORT}:5432" # Puerto ${POSTGRES_ORDERDB_PORT} para no chocar con el de productos
     networks:
       - ecommerce-network
     volumes:
@@ -51,11 +49,11 @@ services:
     container_name: product_ms_postgres
     restart: always
     environment:
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_PRODUCTDB_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PRODUCTDB_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_PRODUCTDB_DB}
     ports:
-      - "5435:5432"
+      - "${POSTGRES_PRODUCTDB_PORT}:5432"
     networks:
       - ecommerce-network
     volumes:
@@ -71,6 +69,8 @@ services:
     ports:
       - "5050:80"
     depends_on:
+      - auth_db
+      - customer_db
       - product_db
       - order_db
     networks:

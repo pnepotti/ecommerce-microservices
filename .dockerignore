@@ -1,0 +1,25 @@
+# Build tools
+.gradle
+.mvn
+target/
+build/
+bin/
+out/
+
+# Docker files
+Dockerfile
+.dockerignore
+docker-compose.yml
+
+# Git & IDEs
+.git
+.gitignore
+.idea
+.vscode
+*.iml
+
+# Log files
+*.log
+
+# Sensitive info
+.env

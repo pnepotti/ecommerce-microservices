@@ -2,9 +2,9 @@ server:
   port: 8084
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/productdb
-    username: admin
-    password: admin
+    url: jdbc:postgresql://localhost:${POSTGRES_PRODUCTDB_PORT}/${POSTGRES_PRODUCTDB_DB}
+    username: ${POSTGRES_PRODUCTDB_USER}
+    password: ${POSTGRES_PRODUCTDB_PASSWORD}
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:

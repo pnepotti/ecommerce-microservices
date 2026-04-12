@@ -2,9 +2,9 @@ server:
   port: 8083
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5433/orderdb
-    username: admin
-    password: adminpassword
+    url: jdbc:postgresql://localhost:${POSTGRES_ORDERDB_PORT}/${POSTGRES_ORDERDB_DB}
+    username: ${POSTGRES_ORDERDB_USER}
+    password: ${POSTGRES_ORDERDB_PASSWORD}
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:

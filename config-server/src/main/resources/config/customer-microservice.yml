@@ -2,7 +2,11 @@ server:
   port: 8082
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5433/customerdb
+    url: jdbc:postgresql://localhost:${POSTGRES_CUSTOMERDB_PORT}/${POSTGRES_CUSTOMERDB_DB}
+    username: ${POSTGRES_CUSTOMERDB_USER}
+    password: ${POSTGRES_CUSTOMERDB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
       ddl-auto: update # Cambiar a 'validate' o 'none' en producción
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
