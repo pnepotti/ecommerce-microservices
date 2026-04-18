@@ -1,0 +1,40 @@
+{
+    "Servers": {
+        "1": {
+            "Name": "Auth Service",
+            "Group": "E-commerce",
+            "Host": "auth_db",
+            "Port": 5432,
+            "MaintenanceDB": "authdb",
+            "Username": "admin",
+            "SSLMode": "prefer"
+        },
+        "2": {
+            "Name": "User Service",
+            "Group": "E-commerce",
+            "Host": "user_db",
+            "Port": 5432,
+            "MaintenanceDB": "userdb",
+            "Username": "admin",
+            "SSLMode": "prefer"
+        },
+        "3": {
+            "Name": "Order Service",
+            "Group": "E-commerce",
+            "Host": "order_db",
+            "Port": 5432,
+            "MaintenanceDB": "orderdb",
+            "Username": "admin",
+            "SSLMode": "prefer"
+        },
+        "4": {
+            "Name": "Product Service",
+            "Group": "E-commerce",
+            "Host": "product_db",
+            "Port": 5432,
+            "MaintenanceDB": "productdb",
+            "Username": "admin",
+            "SSLMode": "prefer"
+        }
+    }
+}

@@ -1,6 +1,9 @@
 package com.paulonepotti.ecommerce.product_microservice.infrastructure.adapter.out.persistence;
 
+import com.paulonepotti.ecommerce.product_microservice.domain.model.Category;
+
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -9,6 +12,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "products")
 public class ProductEntity {
 
@@ -19,13 +23,9 @@ public class ProductEntity {
     private String name;
     private String description;
     private Double price;
-    private Integer stock;
 
-    public ProductEntity(String name, String description, Double price, Integer stock) {
-        this.name = name;
-        this.description = description;
-        this.price = price;
-        this.stock = stock;
-    }
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "category_id")
+    private CategoryEntity category;
     
 }

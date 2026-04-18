@@ -1,22 +1,28 @@
 package com.paulonepotti.ecommerce.product_microservice.domain.model;
 
+import jakarta.persistence.FetchType;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+
 public class Product {
 
     private Long id;
     private String name;
     private String description;
     private Double price;
-    private Integer stock;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "category_id")
+    private Long categoryId;
 
     public Product() {
     }
 
-    public Product(Long id, String name, String description, Double price, Integer stock) {
+    public Product(Long id, String name, String description, Double price, Long categoryId) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.price = price;
-        this.stock = stock;
+        this.categoryId = categoryId;
     }
 
     public Long getId() {
@@ -46,23 +52,12 @@ public class Product {
     public void setPrice(Double price) {
         this.price = price;
     }
-    
-    public Integer getStock() {
-        return stock;
+    public Long getCategoryId() {
+        return categoryId;
     }
-    public void setStock(Integer stock) {
-        this.stock = stock;
-    }
-
-    public void decreaseStock(Integer quantity) {
-        if (this.stock < quantity) {
-            throw new IllegalArgumentException("Stock insuficiente para el producto: " + this.name);
-        }
-        this.stock -= quantity;
+    public void setCategoryId(Long categoryId) {
+        this.categoryId = categoryId;
     }
 
-    public void increaseStock(Integer quantity) {
-        this.stock += quantity;
-    }
 
 }
