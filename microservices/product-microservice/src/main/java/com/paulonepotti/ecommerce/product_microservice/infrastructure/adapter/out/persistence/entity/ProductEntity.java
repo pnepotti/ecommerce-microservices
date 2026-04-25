@@ -1,6 +1,6 @@
-package com.paulonepotti.ecommerce.product_microservice.infrastructure.adapter.out.persistence;
+package com.paulonepotti.ecommerce.product_microservice.infrastructure.adapter.out.persistence.entity;
 
-import com.paulonepotti.ecommerce.product_microservice.domain.model.Category;
+import java.math.BigDecimal;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -18,11 +18,10 @@ public class ProductEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    
+    private Long id;    
     private String name;
     private String description;
-    private Double price;
+    private BigDecimal price;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")

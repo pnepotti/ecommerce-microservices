@@ -1,26 +1,27 @@
 package com.paulonepotti.ecommerce.product_microservice.domain.model;
 
-import jakarta.persistence.FetchType;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import java.math.BigDecimal;
+
+import com.paulonepotti.ecommerce.product_microservice.domain.exception.InvalidProductNameException;
+import com.paulonepotti.ecommerce.product_microservice.domain.exception.InvalidProductPriceException;
 
 public class Product {
 
     private Long id;
     private String name;
     private String description;
-    private Double price;
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "category_id")
+    private BigDecimal price;
     private Long categoryId;
 
     public Product() {
     }
 
-    public Product(Long id, String name, String description, Double price, Long categoryId) {
+    public Product(Long id, String name, String description, BigDecimal price, Long categoryId) {
+        validateName(name);
+        validatePrice(price);
         this.id = id;
         this.name = name;
-        this.description = description;
+        this.description = description;        
         this.price = price;
         this.categoryId = categoryId;
     }
@@ -36,6 +37,7 @@ public class Product {
         return name;
     }
     public void setName(String name) {
+        validateName(name);
         this.name = name;
     }
 
@@ -46,10 +48,11 @@ public class Product {
         this.description = description;
     }
 
-    public Double getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
-    public void setPrice(Double price) {
+    public void setPrice(BigDecimal price) {
+        validatePrice(price);
         this.price = price;
     }
     public Long getCategoryId() {
@@ -59,5 +62,25 @@ public class Product {
         this.categoryId = categoryId;
     }
 
+    public void updateFrom(Product product) {
+        validateName(product.getName());
+        validatePrice(product.getPrice());
+        this.name = product.getName();
+        this.description = product.getDescription();
+        this.price = product.getPrice();
+        this.categoryId = product.getCategoryId();
+    }
+
+    private void validateName(String name) {
+        if (name == null || name.isBlank()) {
+            throw new InvalidProductNameException("Product name is required");
+        }
+    }
+
+    private void validatePrice(BigDecimal price) {
+        if (price == null || price.compareTo(BigDecimal.ZERO) <= 0) {
+            throw new InvalidProductPriceException("Price must be a positive number");
+        }
+    }
 
 }

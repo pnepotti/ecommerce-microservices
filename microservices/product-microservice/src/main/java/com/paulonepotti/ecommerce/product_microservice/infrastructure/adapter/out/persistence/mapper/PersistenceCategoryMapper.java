@@ -1,9 +1,12 @@
 package com.paulonepotti.ecommerce.product_microservice.infrastructure.adapter.out.persistence.mapper;
 
-import com.paulonepotti.ecommerce.product_microservice.domain.model.Category;
-import com.paulonepotti.ecommerce.product_microservice.infrastructure.adapter.out.persistence.CategoryEntity;
+import org.springframework.stereotype.Component;
 
-public class CategoryMapper {
+import com.paulonepotti.ecommerce.product_microservice.domain.model.Category;
+import com.paulonepotti.ecommerce.product_microservice.infrastructure.adapter.out.persistence.entity.CategoryEntity;
+
+@Component
+public class PersistenceCategoryMapper {
 
     public CategoryEntity toEntity(Category category) {
         if (category == null) {

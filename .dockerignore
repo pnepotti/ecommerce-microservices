@@ -22,3 +22,6 @@ docker-compose.yml
 
 # Sensitive info
 .env
+
+# Codex files
+.codex

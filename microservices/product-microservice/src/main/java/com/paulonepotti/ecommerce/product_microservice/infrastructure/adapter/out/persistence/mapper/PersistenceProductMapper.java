@@ -3,11 +3,12 @@ package com.paulonepotti.ecommerce.product_microservice.infrastructure.adapter.o
 import org.springframework.stereotype.Component;
 
 import com.paulonepotti.ecommerce.product_microservice.domain.model.Product;
-import com.paulonepotti.ecommerce.product_microservice.infrastructure.adapter.out.persistence.CategoryEntity;
-import com.paulonepotti.ecommerce.product_microservice.infrastructure.adapter.out.persistence.ProductEntity;
+import com.paulonepotti.ecommerce.product_microservice.infrastructure.adapter.out.persistence.entity.CategoryEntity;
+import com.paulonepotti.ecommerce.product_microservice.infrastructure.adapter.out.persistence.entity.ProductEntity;
 
 @Component
-public class ProductMapper {
+public class PersistenceProductMapper {
+    
     public ProductEntity toEntity(Product product) {
         ProductEntity entity = new ProductEntity();
         entity.setId(product.getId());
