@@ -58,5 +58,10 @@ public class CategoryPersistenceAdapter implements CategoryRepositoryPort {
         }
         return save(category);
     }
+
+    @Override
+    public boolean existsById(Long id) {
+        return repository.existsById(id);
+    }
 }
 

@@ -12,6 +12,11 @@
 	<name>product-microservice</name>
 	<description>Microservice of products</description>
 	<dependencies>
+		<dependency>
+			<groupId>com.paulonepotti.microservices</groupId>
+			<artifactId>common-exceptions</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>
@@ -21,11 +26,6 @@
 				<version>${spring-cloud.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
-			</dependency>
-			<dependency>
-				<groupId>com.paulonepotti.microservices</groupId>
-				<artifactId>common-exceptions</artifactId>
-				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>

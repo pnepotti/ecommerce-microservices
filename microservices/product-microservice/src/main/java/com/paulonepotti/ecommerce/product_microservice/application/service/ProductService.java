@@ -7,7 +7,9 @@ import com.paulonepotti.ecommerce.product_microservice.application.port.in.Delet
 import com.paulonepotti.ecommerce.product_microservice.application.port.in.GetAllProductsUseCase;
 import com.paulonepotti.ecommerce.product_microservice.application.port.in.GetProductUseCase;
 import com.paulonepotti.ecommerce.product_microservice.application.port.in.UpdateProductUseCase;
+import com.paulonepotti.ecommerce.product_microservice.application.port.out.CategoryRepositoryPort;
 import com.paulonepotti.ecommerce.product_microservice.application.port.out.ProductRepositoryPort;
+import com.paulonepotti.ecommerce.product_microservice.domain.exception.CategoryNotFoundException;
 import com.paulonepotti.ecommerce.product_microservice.domain.exception.ProductNotFoundException;
 import com.paulonepotti.ecommerce.product_microservice.domain.model.Product;
 
@@ -18,19 +20,27 @@ public class ProductService implements
     UpdateProductUseCase,
     DeleteProductUseCase {
 
-    private final ProductRepositoryPort productRepositoryPort;    
+    private final ProductRepositoryPort productRepositoryPort;  
+    private final CategoryRepositoryPort categoryRepositoryPort;     
 
-    public ProductService(ProductRepositoryPort productRepositoryPort) {
+    public ProductService(ProductRepositoryPort productRepositoryPort, CategoryRepositoryPort categoryRepositoryPort) {
         this.productRepositoryPort = productRepositoryPort;
+        this.categoryRepositoryPort = categoryRepositoryPort;
     }
 
     @Override
     public Product createProduct(Product product) {
+        if (product.getCategoryId() != null && !categoryRepositoryPort.existsById(product.getCategoryId())) {
+            throw new CategoryNotFoundException(product.getCategoryId());
+        }
         return productRepositoryPort.save(product);
     }
 
     @Override
     public Product updateProduct(Long id, Product product) {
+        if (product.getCategoryId() != null && !categoryRepositoryPort.existsById(product.getCategoryId())) {
+            throw new CategoryNotFoundException(product.getCategoryId());
+        }
         Product existingProduct = productRepositoryPort.findById(id)
             .orElseThrow(() -> new ProductNotFoundException(id));
         
@@ -52,6 +62,9 @@ public class ProductService implements
         if (name != null && !name.isEmpty()) {
             return productRepositoryPort.findByName(name);
         } else if (categoryId != null) {
+            if (!categoryRepositoryPort.existsById(categoryId)) {
+                throw new CategoryNotFoundException(categoryId);
+            }
             return productRepositoryPort.findByCategory(categoryId);
         } else {
             return productRepositoryPort.findAll();

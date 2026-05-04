@@ -1,17 +1,41 @@
 server:
   port: 8084
+
 spring:
   datasource:
     url: jdbc:postgresql://localhost:${POSTGRES_PRODUCTDB_PORT}/${POSTGRES_PRODUCTDB_DB}
     username: ${POSTGRES_PRODUCTDB_USER}
     password: ${POSTGRES_PRODUCTDB_PASSWORD}
     driver-class-name: org.postgresql.Driver
+    hikari:                                       
+      connection-timeout: 5000                  
+      initialization-fail-timeout: -1           
+      keepalive-time: 30000
+
   jpa:
     hibernate:
-      ddl-auto: update # Cambiar a 'validate' o 'none' en producción
+      ddl-auto: update
     database-platform: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non-contextual-creation: true    
+
+logging:
+  level:
+    root: INFO
+    org.springframework: INFO
+    com.paulonepotti.microservices: WARN
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %thread{10} - %level{5} - %logger{36} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} - %thread{10} - %level{5} - %logger{36} - %msg%n"
+  file:
+    name: logs/product-microservice.log    
+    max-size: 10MB
+    max-history: 30  
 
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/ 
+      defaultZone: http://localhost:8761/eureka/

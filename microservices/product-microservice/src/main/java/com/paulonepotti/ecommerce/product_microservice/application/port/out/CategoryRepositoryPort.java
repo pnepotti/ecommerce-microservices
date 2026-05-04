@@ -12,4 +12,5 @@ public interface CategoryRepositoryPort {
     List<Category> findAll();
     void deleteById(Long id);    
     Category update(Category category);
+    boolean existsById(Long id);
 }
