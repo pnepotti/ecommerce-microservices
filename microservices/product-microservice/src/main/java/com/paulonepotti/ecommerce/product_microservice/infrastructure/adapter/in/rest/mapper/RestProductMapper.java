@@ -10,7 +10,7 @@ import com.paulonepotti.ecommerce.product_microservice.infrastructure.adapter.in
 public class RestProductMapper {
     public Product toDomain(ProductRequest request) {
         return new Product(
-            null,  // ID será generado por BD
+            null,
             request.name(),
             request.description(),
             request.price(),
