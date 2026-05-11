@@ -1,4 +1,4 @@
-package com.paulonepotti.ecommerce.order_microservice.infrastructure.adapter.out.persistence;
+package com.paulonepotti.ecommerce.order_microservice.infrastructure.adapter.out.persistence.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -11,7 +11,11 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.math.BigDecimal;
 import java.util.List;
+
+import com.paulonepotti.ecommerce.order_microservice.domain.model.OrderStatus;
 
 @Entity
 @Getter
@@ -24,8 +28,9 @@ public class OrderEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String userEmail;
-    private Double totalAmount;
+    private Long customerId;
+    private OrderStatus status;
+    private BigDecimal totalAmount;
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<OrderItemEntity> items;

@@ -1,4 +1,6 @@
-package com.paulonepotti.ecommerce.order_microservice.infrastructure.adapter.out.persistence;
+package com.paulonepotti.ecommerce.order_microservice.infrastructure.adapter.out.persistence.entity;
+
+import java.math.BigDecimal;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -27,7 +29,7 @@ public class OrderItemEntity {
     
     private Long productId;
     private Integer quantity;
-    private Double unitPrice;
+    private BigDecimal unitPrice;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "order_id")

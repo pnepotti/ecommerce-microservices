@@ -13,6 +13,8 @@ public class RestProductMapper {
             null,
             request.name(),
             request.description(),
+            request.imageUrl(),
+            request.stock(),
             request.price(),
             request.categoryId()
         );
@@ -23,6 +25,8 @@ public class RestProductMapper {
             product.getId(),
             product.getName(),
             product.getDescription(),
+            product.getImageUrl(),
+            product.getStock(),
             product.getPrice(),
             product.getCategoryId()
         );

@@ -10,6 +10,10 @@ public record ProductRequest(
     @NotBlank(message = "Name is required")
     String name,
     String description,
+    String imageUrl,
+    @NotNull(message = "Stock is required")
+    @Positive(message = "Stock must be a positive number")
+    Integer stock,
     @NotNull(message = "Price is required")
     @Positive(message = "Price must be a positive number")
     BigDecimal price,

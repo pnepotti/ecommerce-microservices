@@ -3,16 +3,20 @@ package com.paulonepotti.ecommerce.order_microservice.infrastructure.adapter.out
 import org.springframework.stereotype.Component;
 import com.paulonepotti.ecommerce.order_microservice.domain.model.OrderItem;
 import com.paulonepotti.ecommerce.order_microservice.infrastructure.adapter.out.rest.dto.ProductDTO;
+import com.paulonepotti.ecommerce.order_microservice.domain.valueobject.ProductSnapshot;
 
 @Component
 public class ProductMapper {
 
     public OrderItem toOrderItem(ProductDTO dto, Integer quantity) {
-        return new OrderItem(
-            null, // El ID se generará al guardar la orden
+        
+        ProductSnapshot snapshot = new ProductSnapshot(
             dto.id(),
-            quantity,
-            dto.price() // Aquí "congelamos" el precio del DTO al dominio
+            dto.name(),
+            dto.price(),
+            dto.imageUrl()
         );
+
+        return new OrderItem(snapshot, quantity);
     }
 }

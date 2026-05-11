@@ -1,38 +1,61 @@
 package com.paulonepotti.ecommerce.order_microservice.domain.model;
 
-public class OrderItem {
-    private Long id;
-    private Long productId; 
-    private Integer quantity;
-    private Double unitPrice; 
+import java.math.BigDecimal;
 
-    public OrderItem(Long id, Long productId, Integer quantity, Double unitPrice) {
-        this.id = id;
-        this.productId = productId;
+import com.paulonepotti.ecommerce.order_microservice.domain.valueobject.ProductSnapshot;
+
+public class OrderItem {
+
+    private Long id;
+    private ProductSnapshot product; 
+    private Integer quantity;
+    private BigDecimal unitPrice; 
+
+    public OrderItem(ProductSnapshot product, Integer quantity) {
+
+        if (quantity <= 0) {
+            throw new IllegalArgumentException("La cantidad debe ser mayor que cero");
+        }
+
+        if (product == null) {
+            throw new IllegalArgumentException("El producto no puede ser nulo");
+        } 
+
+        this.product = product;
         this.quantity = quantity;
-        this.unitPrice = unitPrice;
+        this.unitPrice = product.getPrice(); 
+
     }
 
     public Long getId() {
         return id;
     }
-    public Long getProductId() {
-        return productId;
+
+    public ProductSnapshot getProduct() {
+        return product;
     }
+
     public Integer getQuantity() {
         return quantity;
     }
-    public Double getUnitPrice() {
+
+    public BigDecimal getUnitPrice() {
         return unitPrice;
     }
+
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
-    public void setUnitPrice(Double unitPrice) {
+    
+    public void setUnitPrice(BigDecimal unitPrice) {
         this.unitPrice = unitPrice;
     }
-    
-    public Double getSubtotal() {
-        return this.unitPrice * this.quantity;
+
+    public BigDecimal getSubtotal() {
+        return this.unitPrice.multiply(BigDecimal.valueOf(this.quantity));
+    }
+
+    public void setProductSnapshot(ProductSnapshot snapshot) {
+        this.product = snapshot;
     }
 }

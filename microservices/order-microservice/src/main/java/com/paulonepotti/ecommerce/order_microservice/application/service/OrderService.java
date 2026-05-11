@@ -1,45 +1,90 @@
 package com.paulonepotti.ecommerce.order_microservice.application.service;
 
-import com.paulonepotti.ecommerce.order_microservice.infrastructure.adapter.out.rest.dto.ProductDTO;
-import com.paulonepotti.ecommerce.order_microservice.infrastructure.adapter.out.rest.ProductClient;
 import com.paulonepotti.ecommerce.order_microservice.domain.model.Order;
+import com.paulonepotti.ecommerce.order_microservice.domain.exception.DomainValidationException;
+import com.paulonepotti.ecommerce.order_microservice.domain.exception.OrderNotFoundException;
+import com.paulonepotti.ecommerce.order_microservice.application.port.in.CancelOrderUseCase;
 import com.paulonepotti.ecommerce.order_microservice.application.port.in.CreateOrderUseCase;
+import com.paulonepotti.ecommerce.order_microservice.application.port.in.GetOrderUseCase;
+import com.paulonepotti.ecommerce.order_microservice.application.port.in.UpdateOrderStatusUseCase;
 import com.paulonepotti.ecommerce.order_microservice.application.port.out.OrderRepositoryPort;
+import com.paulonepotti.ecommerce.order_microservice.application.port.out.ProductPort;
 
-public class OrderService implements CreateOrderUseCase {
+public class OrderService implements
+        CreateOrderUseCase,
+        GetOrderUseCase,
+        CancelOrderUseCase,
+        UpdateOrderStatusUseCase {
 
     private final OrderRepositoryPort orderRepositoryPort;
-    private final ProductClient productClient; // Nuestro cliente Feign
+    private final ProductPort productPort; // ← puerto, no Feign directo
 
-    public OrderService(OrderRepositoryPort orderRepositoryPort, ProductClient productClient) {
+    public OrderService(OrderRepositoryPort orderRepositoryPort, ProductPort productPort) {
         this.orderRepositoryPort = orderRepositoryPort;
-        this.productClient = productClient;
+        this.productPort         = productPort;
     }
 
     @Override
     public Order createOrder(Order orderRequest) {
-        // 1. Validar y enriquecer cada ítem con datos del Product-Microservice
+        // 1. Enriquecer cada ítem con el snapshot del producto actual
         orderRequest.getItems().forEach(item -> {
-            // Llamada inter-servicio via Feign
-            ProductDTO product = productClient.getProductById(item.getProductId());
+            // Llamada al puerto — no sabe si es Feign, REST o un mock
+            var snapshot = productPort.getProductById(
+                item.getProduct().getProductId()
+            );
 
-            // Regla de Negocio: Validar Stock
-            if (product.stock() < item.getQuantity()) {
-                throw new RuntimeException("Stock insuficiente para: " + product.name());
+            // Congela nombre y precio al momento de la compra
+            item.setProductSnapshot(snapshot);
+
+            // Validar stock — descomentiá cuando tengas InventoryPort
+            /*
+            if (snapshot.getStock() < item.getQuantity()) {
+                throw new DomainValidationException(
+                    "Stock insuficiente para: " + snapshot.getName()
+                );
             }
-
-            // Regla de Negocio: "Congelar" el precio actual del catálogo
-            item.setUnitPrice(product.price());
+            */
         });
 
-        // 2. Calcular el total de la orden
-        Double total = orderRequest.getItems().stream()
-                .mapToDouble(item -> item.getUnitPrice() * item.getQuantity())
-                .sum();
-        
-        orderRequest.setTotalAmount(total);
+        // 2. Recalcula el total con los precios congelados
+        orderRequest.recalculateTotal();
 
-        // 3. Persistir la orden en la base de datos propia
+        // 3. Persistir
         return orderRepositoryPort.save(orderRequest);
+    }
+
+    @Override
+    public Order getOrderById(Long orderId) {
+        return orderRepositoryPort.findById(orderId)
+            .orElseThrow(() -> new OrderNotFoundException(orderId));
+    }
+
+    @Override
+    public void cancelOrder(Long orderId) {
+        Order order = orderRepositoryPort.findById(orderId)
+            .orElseThrow(() -> new OrderNotFoundException(orderId));
+
+        order.cancel("Cancelado por el cliente"); // ← método de dominio con validación de estado
+        orderRepositoryPort.save(order);
+    }
+
+    @Override
+    public void updateOrderStatus(Long orderId, String newStatus) {
+        Order order = orderRepositoryPort.findById(orderId)
+            .orElseThrow(() -> new OrderNotFoundException(orderId));
+
+        // El dominio valida que la transición sea legal — si no, lanza InvalidOrderStateException
+        switch (newStatus.toUpperCase()) {
+            case "CONFIRMED"  -> order.confirm();
+            case "PAID"       -> order.markAsPaid();
+            case "PREPARING"  -> order.startPreparing();
+            case "SHIPPED"    -> order.ship();
+            case "DELIVERED"  -> order.deliver();
+            case "CANCELLED"  -> order.cancel("Actualización manual de estado");
+            case "REFUNDED"   -> order.refund();
+            default -> throw new DomainValidationException("Estado inválido: " + newStatus);
+        }
+
+        orderRepositoryPort.save(order);
     }
 }

@@ -1,6 +1,8 @@
 package com.paulonepotti.ecommerce.order_microservice.infrastructure.adapter.out.persistence;
+
 import com.paulonepotti.ecommerce.order_microservice.application.port.out.OrderRepositoryPort;
 import com.paulonepotti.ecommerce.order_microservice.domain.model.Order;
+import com.paulonepotti.ecommerce.order_microservice.infrastructure.adapter.out.persistence.entity.OrderEntity;
 import com.paulonepotti.ecommerce.order_microservice.infrastructure.adapter.out.persistence.mapper.OrderMapper;
 
 import lombok.RequiredArgsConstructor;

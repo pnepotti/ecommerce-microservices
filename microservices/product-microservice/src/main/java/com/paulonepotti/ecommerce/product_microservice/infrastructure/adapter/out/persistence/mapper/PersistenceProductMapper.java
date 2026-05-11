@@ -14,6 +14,8 @@ public class PersistenceProductMapper {
         entity.setId(product.getId());
         entity.setName(product.getName());
         entity.setDescription(product.getDescription());
+        entity.setImageUrl(product.getImageUrl());
+        entity.setStock(product.getStock());
         entity.setPrice(product.getPrice());
         if (product.getCategoryId() != null) {
             CategoryEntity category = new CategoryEntity();
@@ -28,6 +30,8 @@ public class PersistenceProductMapper {
             entity.getId(),
             entity.getName(),
             entity.getDescription(),
+            entity.getImageUrl(),
+            entity.getStock(),
             entity.getPrice(),
             entity.getCategory() != null ? entity.getCategory().getId() : null
         );
@@ -37,6 +41,8 @@ public class PersistenceProductMapper {
 
         entity.setName(product.getName());
         entity.setDescription(product.getDescription());
+        entity.setImageUrl(product.getImageUrl());
+        entity.setStock(product.getStock());
         entity.setPrice(product.getPrice());
 
         Long categoryId = product.getCategoryId();
