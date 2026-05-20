@@ -8,7 +8,8 @@ public record CustomerResponse(
     String lastName,
     String email,
     boolean active,
-    LocalDateTime createdAt
+    LocalDateTime createdAt,
+    LocalDateTime updatedAt
 ) {
 
 }

@@ -3,6 +3,7 @@ package com.paulonepotti.microservices.customer_microservice.controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.paulonepotti.microservices.customer_microservice.service.AddressService;
 import com.paulonepotti.microservices.customer_microservice.service.CustomerService;
 
 import jakarta.validation.Valid;
@@ -12,6 +13,8 @@ import java.util.List;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
+import com.paulonepotti.microservices.customer_microservice.dto.AddressRequest;
+import com.paulonepotti.microservices.customer_microservice.dto.AddressResponse;
 import com.paulonepotti.microservices.customer_microservice.dto.CustomerRequest;
 import com.paulonepotti.microservices.customer_microservice.dto.CustomerResponse;
 
@@ -29,6 +32,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 public class CustomerController {
 
     private final CustomerService customerService;
+    private final AddressService addressService;
+
 
     @GetMapping
     public ResponseEntity<List<CustomerResponse>> getAllCustomers() {
@@ -42,13 +47,16 @@ public class CustomerController {
     }
 
     @PostMapping
-    public ResponseEntity<CustomerResponse> createCustomer(@Valid @RequestBody CustomerRequest request) {
+    public ResponseEntity<CustomerResponse> createCustomer(
+            @Valid @RequestBody CustomerRequest request) {
         CustomerResponse createdCustomer = customerService.createCustomer(request);
-       return ResponseEntity.status(HttpStatus.CREATED).body(createdCustomer);
+        return ResponseEntity.status(HttpStatus.CREATED).body(createdCustomer);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<CustomerResponse> updateCustomer(@PathVariable Long id, @Valid @RequestBody CustomerRequest customerRequest) {
+    public ResponseEntity<CustomerResponse> updateCustomer(
+            @PathVariable Long id, 
+            @Valid @RequestBody CustomerRequest customerRequest) {
         CustomerResponse updatedCustomer = customerService.updateCustomer(id, customerRequest);
         return ResponseEntity.ok(updatedCustomer);
     }
@@ -57,6 +65,43 @@ public class CustomerController {
     public ResponseEntity<Void> deleteCustomer(@PathVariable Long id) {
         customerService.deleteCustomer(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @PostMapping("/{id}/addresses")
+    public ResponseEntity<AddressResponse> addAddress(
+            @PathVariable(value = "id") Long customerId,
+            @Valid @RequestBody AddressRequest request) {
+        AddressResponse address = addressService.addAddress(customerId, request);
+        return ResponseEntity.status(HttpStatus.CREATED)
+            .body(address);
+    }
+
+    @GetMapping("/{id}/addresses")
+    public ResponseEntity<List<AddressResponse>> getAddresses(
+            @PathVariable(value = "id") Long customerId) {
+        return ResponseEntity.ok(addressService.getAddresses(customerId));
+    }
+
+    @GetMapping("/{id}/addresses/{addressId}")
+    public ResponseEntity<AddressResponse> getAddress(
+            @PathVariable(value = "id") Long customerId,
+            @PathVariable Long addressId) {
+        return ResponseEntity.ok(addressService.getAddress(customerId, addressId));
+    }    
+    @DeleteMapping("/{id}/addresses/{addressId}")
+    public ResponseEntity<Void> deleteAddress(
+            @PathVariable(value = "id") Long customerId,
+            @PathVariable Long addressId) {
+        addressService.deleteAddress(customerId, addressId);
+        return ResponseEntity.noContent().build();
+    }
+
+    @PutMapping("/{id}/addresses/{addressId}")
+    public ResponseEntity<AddressResponse> updateAddress(
+            @PathVariable(value = "id") Long customerId,
+            @PathVariable Long addressId,
+            @RequestBody @Valid AddressRequest request) {
+        return ResponseEntity.ok(addressService.updateAddress(customerId, addressId, request));
     }
 
 }

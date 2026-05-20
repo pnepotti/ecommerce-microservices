@@ -1,10 +1,5 @@
 package com.paulonepotti.microservices.customer_microservice.mapper;
 
-import java.time.LocalDateTime;
-import java.util.Collections;
-import java.util.List;
-import java.util.stream.Collectors;
-
 import org.springframework.stereotype.Component;
 
 import com.paulonepotti.microservices.customer_microservice.dto.CustomerRequest;
@@ -16,47 +11,33 @@ public class CustomerMapper {
 
 
     public Customer toEntity(CustomerRequest customerRequest) {
-        if (customerRequest == null) {
-            return null;
-        }
-        Customer customer = Customer.builder()
+        if (customerRequest == null) return null;
+        return Customer.builder()
                 .firstName(customerRequest.firstName())
                 .lastName(customerRequest.lastName())
                 .email(customerRequest.email())
-                .active(true) 
-                .createdAt(LocalDateTime.now())
+                .active(true)
                 .build();
-        return customer;
     }
 
-    public void updateEntity(CustomerRequest request, Customer customer) {
-        if (request == null || customer == null) return;
-
-        customer.setFirstName(request.firstName());
-        customer.setLastName(request.lastName());
-        customer.setEmail(request.email());
+    public void updateEntity(CustomerRequest customerRequest, Customer customer) {
+        if (customerRequest == null || customer == null) return;
+        customer.setFirstName(customerRequest.firstName());
+        customer.setLastName(customerRequest.lastName());
+        customer.setEmail(customerRequest.email());
     }
 
     public CustomerResponse toResponse(Customer customer) {
         if (customer == null) return null;
-
         return new CustomerResponse(
                 customer.getId(),
                 customer.getFirstName(),
                 customer.getLastName(),
                 customer.getEmail(),
                 customer.isActive(),
-                customer.getCreatedAt()
+                customer.getCreatedAt(),
+                customer.getUpdatedAt()
         );
-    }
-
-    public List<CustomerResponse> toResponseList(List<Customer> customers) {
-        if (customers == null) {
-            return Collections.emptyList();
-        }
-        return customers.stream()
-                .map(this::toResponse)
-                .collect(Collectors.toList());
     }
 
 }

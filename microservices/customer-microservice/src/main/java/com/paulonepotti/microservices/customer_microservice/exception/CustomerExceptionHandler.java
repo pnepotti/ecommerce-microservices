@@ -8,11 +8,10 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import com.paulonepotti.microservices.common_exceptions.ErrorResponse;
 import com.paulonepotti.microservices.common_exceptions.GlobalExceptionHandler;
-import com.paulonepotti.microservices.customer_microservice.controller.CustomerController;
 
 import org.springframework.http.HttpStatus;
 
-@RestControllerAdvice(assignableTypes = CustomerController.class)
+@RestControllerAdvice(basePackages = "com.paulonepotti.microservices.customer_microservice")
 @Order(Ordered.HIGHEST_PRECEDENCE)
 public class CustomerExceptionHandler extends GlobalExceptionHandler {
 
@@ -23,5 +22,28 @@ public class CustomerExceptionHandler extends GlobalExceptionHandler {
         return ResponseEntity
             .status(HttpStatus.NOT_FOUND)
             .body(ErrorResponse.of("CUSTOMER_NOT_FOUND", ex.getMessage())); }
+
+    @ExceptionHandler(CustomerEmailAlreadyExistsException.class)
+    public ResponseEntity<ErrorResponse> handleCustomerEmailAlreadyExists(
+            CustomerEmailAlreadyExistsException ex) {
+        return ResponseEntity
+            .status(HttpStatus.CONFLICT)
+            .body(ErrorResponse.of("CUSTOMER_EMAIL_ALREADY_EXISTS", ex.getMessage()));
+    }
+
+
+    @ExceptionHandler(AddressNotFoundException.class)
+    public ResponseEntity<ErrorResponse> handleAddressNotFound(AddressNotFoundException ex) {
+        return ResponseEntity
+            .status(HttpStatus.NOT_FOUND)
+            .body(ErrorResponse.of("ADDRESS_NOT_FOUND", ex.getMessage()));
+    }
+
+    @ExceptionHandler(AddressLimitExceededException.class)
+    public ResponseEntity<ErrorResponse> handleAddressLimitExceeded(AddressLimitExceededException ex) {
+        return ResponseEntity
+            .status(HttpStatus.CONFLICT)
+            .body(ErrorResponse.of("ADDRESS_LIMIT_EXCEEDED", ex.getMessage()));
+    }
 
 }
