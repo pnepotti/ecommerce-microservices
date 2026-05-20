@@ -18,6 +18,9 @@ import com.paulonepotti.microservices.customer_microservice.dto.AddressResponse;
 import com.paulonepotti.microservices.customer_microservice.dto.CustomerRequest;
 import com.paulonepotti.microservices.customer_microservice.dto.CustomerResponse;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -36,8 +39,9 @@ public class CustomerController {
 
 
     @GetMapping
-    public ResponseEntity<List<CustomerResponse>> getAllCustomers() {
-        List<CustomerResponse> customers = customerService.getAllCustomers();
+    public ResponseEntity<Page<CustomerResponse>> getAllCustomers(
+            @PageableDefault(size = 10) Pageable pageable) {
+        Page<CustomerResponse> customers = customerService.getAllCustomers(pageable);
         return ResponseEntity.ok(customers);
     }
 

@@ -1,7 +1,7 @@
 package com.paulonepotti.microservices.customer_microservice.service;
 
-import java.util.List;
-
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -23,11 +23,9 @@ public class CustomerService {
     private final CustomerMapper customerMapper;
 
     @Transactional(readOnly = true)
-    public List<CustomerResponse> getAllCustomers() {
-        return customerRepository.findAll()
-            .stream()
-            .map(customerMapper::toResponse)
-            .toList();
+    public Page<CustomerResponse> getAllCustomers(Pageable pageable) {
+        return customerRepository.findAll(pageable)
+            .map(customerMapper::toResponse);
     }
 
     @Transactional(readOnly = true)
