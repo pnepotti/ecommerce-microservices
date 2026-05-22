@@ -1,4 +1,5 @@
 services:
+  # Databases
   auth_db:
     image: postgres:16-alpine
     container_name: auth_ms_postgres
@@ -9,6 +10,11 @@ services:
       POSTGRES_DB: ${POSTGRES_AUTHDB_DB}
     ports:
       - "${POSTGRES_AUTHDB_PORT}:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_AUTHDB_USER} -d ${POSTGRES_AUTHDB_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
     networks:
       - ecommerce-network
     volumes:
@@ -24,6 +30,11 @@ services:
       POSTGRES_DB: ${POSTGRES_CUSTOMERDB_DB}
     ports:
       - "${POSTGRES_CUSTOMERDB_PORT}:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_CUSTOMERDB_USER} -d ${POSTGRES_CUSTOMERDB_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
     networks:
       - ecommerce-network
     volumes:
@@ -38,7 +49,12 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_ORDERDB_PASSWORD}
       POSTGRES_DB: ${POSTGRES_ORDERDB_DB}
     ports:
-      - "${POSTGRES_ORDERDB_PORT}:5432" # Puerto ${POSTGRES_ORDERDB_PORT} para no chocar con el de productos
+      - "${POSTGRES_ORDERDB_PORT}:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_ORDERDB_USER} -d ${POSTGRES_ORDERDB_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
     networks:
       - ecommerce-network
     volumes:
@@ -54,10 +70,119 @@ services:
       POSTGRES_DB: ${POSTGRES_PRODUCTDB_DB}
     ports:
       - "${POSTGRES_PRODUCTDB_PORT}:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_PRODUCTDB_USER} -d ${POSTGRES_PRODUCTDB_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
     networks:
       - ecommerce-network
     volumes:
       - products_data:/var/lib/postgresql/data
+
+  # Infrastructure Services
+  config-server:
+    build:
+      context: .
+      dockerfile: config-server/Dockerfile
+    container_name: config-server
+    ports:
+      - "8888:8888"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8888/actuator/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    networks:
+      - ecommerce-network
+
+  discovery-server:
+    build:
+      context: .
+      dockerfile: discovery-server/Dockerfile
+    container_name: discovery-server
+    ports:
+      - "8761:8761"
+    environment:
+      - SPRING_CONFIG_IMPORT=optional:configserver:http://config-server:8888
+    depends_on:
+      config-server:
+        condition: service_healthy
+    networks:
+      - ecommerce-network
+
+  # Microservices
+  customer-service:
+    build:
+      context: .
+      dockerfile: microservices/customer-microservice/Dockerfile
+    container_name: customer-service
+    ports:
+      - "8082:8082"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - SPRING_CONFIG_IMPORT=optional:configserver:http://config-server:8888
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://customer_db:5432/${POSTGRES_CUSTOMERDB_DB}
+      - SPRING_DATASOURCE_USERNAME=${POSTGRES_CUSTOMERDB_USER}
+      - SPRING_DATASOURCE_PASSWORD=${POSTGRES_CUSTOMERDB_PASSWORD}
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery-server:8761/eureka/
+    depends_on:
+      customer_db:
+        condition: service_healthy
+      config-server:
+        condition: service_healthy
+      discovery-server:
+        condition: service_started
+    networks:
+      - ecommerce-network
+
+  product-service:
+    build:
+      context: .
+      dockerfile: microservices/product-microservice/Dockerfile
+    container_name: product-service
+    ports:
+      - "8084:8084"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - SPRING_CONFIG_IMPORT=optional:configserver:http://config-server:8888
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://product_db:5432/${POSTGRES_PRODUCTDB_DB}
+      - SPRING_DATASOURCE_USERNAME=${POSTGRES_PRODUCTDB_USER}
+      - SPRING_DATASOURCE_PASSWORD=${POSTGRES_PRODUCTDB_PASSWORD}
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery-server:8761/eureka/
+    depends_on:
+      product_db:
+        condition: service_healthy
+      config-server:
+        condition: service_healthy
+      discovery-server:
+        condition: service_started
+    networks:
+      - ecommerce-network
+
+  order-service:
+    build:
+      context: .
+      dockerfile: microservices/order-microservice/Dockerfile
+    container_name: order-service
+    ports:
+      - "8083:8083"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - SPRING_CONFIG_IMPORT=optional:configserver:http://config-server:8888
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://order_db:5432/${POSTGRES_ORDERDB_DB}
+      - SPRING_DATASOURCE_USERNAME=${POSTGRES_ORDERDB_USER}
+      - SPRING_DATASOURCE_PASSWORD=${POSTGRES_ORDERDB_PASSWORD}
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery-server:8761/eureka/
+    depends_on:
+      order_db:
+        condition: service_healthy
+      config-server:
+        condition: service_healthy
+      discovery-server:
+        condition: service_started
+    networks:
+      - ecommerce-network
 
   pgadmin:
     image: dpage/pgadmin4

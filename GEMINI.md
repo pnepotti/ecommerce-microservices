@@ -58,4 +58,10 @@ Main stack:
 - Refactor code when improvements are possible
 - Prioritize maintainability and scalability
 
+# Tool Usage & Context
+
+- Whenever generating code for third-party libraries, frameworks (like Spring Boot), or APIs, ALWAYS use the `context7` MCP server to fetch the latest documentation and best practices first.
+- Do not rely solely on pre-trained knowledge for library-specific syntax; verify via Context7 to avoid deprecations.
+- If Context7 returns updated architectural patterns that conflict with older knowledge, favor the updated Context7 documentation.
+
 Always think as a senior software engineer reviewing production-grade systems.

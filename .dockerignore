@@ -1,27 +1,9 @@
-# Build tools
-.mvn
-target/
-build/
-bin/
-out/
-
-# Docker files
-Dockerfile
-.dockerignore
-docker-compose.yml
-
-# Git & IDEs
-.git
-.gitignore
-.idea
-.vscode
-*.iml
-
-# Log files
-*.log
-
-# Sensitive info
-.env
-
-# Codex files
-.codex
+**/target/
+**/.git/
+**/.gitignore
+**/.gitattributes
+**/.vscode/
+**/logs/
+**/Dockerfile
+**/docker-compose.yml
+**/*.md
