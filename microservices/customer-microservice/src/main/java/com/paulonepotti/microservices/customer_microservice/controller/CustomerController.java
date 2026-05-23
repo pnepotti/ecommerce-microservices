@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.paulonepotti.microservices.customer_microservice.service.AddressService;
 import com.paulonepotti.microservices.customer_microservice.service.CustomerService;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import java.util.List;
@@ -32,6 +33,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 @RestController
 @RequestMapping("/api/v1/customers")
 @RequiredArgsConstructor
+@Tag(name = "CustomerController", description = "Endpoints para gestionar clientes y sus direcciones")
 public class CustomerController {
 
     private final CustomerService customerService;
