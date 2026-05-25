@@ -1,6 +1,5 @@
 server:
   port: 8084
-
 spring:
   datasource:
     url: jdbc:postgresql://localhost:${POSTGRES_PRODUCTDB_PORT}/${POSTGRES_PRODUCTDB_DB}
@@ -11,7 +10,6 @@ spring:
       connection-timeout: 5000                  
       initialization-fail-timeout: -1           
       keepalive-time: 30000
-
   jpa:
     hibernate:
       ddl-auto: update
@@ -21,7 +19,6 @@ spring:
         jdbc:
           lob:
             non-contextual-creation: true    
-
 logging:
   level:
     root: INFO
@@ -34,7 +31,6 @@ logging:
     name: logs/product-microservice.log    
     max-size: 10MB
     max-history: 30  
-
 eureka:
   client:
     service-url:
