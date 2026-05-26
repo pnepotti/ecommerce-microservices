@@ -243,6 +243,24 @@ services:
     networks:
       - ecommerce-network
 
+  # Grafana
+  grafana:
+    image: grafana/grafana:latest
+    container_name: ecommerce_ms_grafana
+    restart: always
+    ports:
+      - "${GRAFANA_PORT}:3000"
+    volumes:
+      - grafana_data:/var/lib/grafana
+    environment:
+      - GF_SECURITY_ADMIN_USER=${GRAFANA_ADMIN_USER}
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_ADMIN_PASSWORD}
+    depends_on:
+      prometheus:
+        condition: service_started
+    networks:
+      - ecommerce-network
+
   # pgAdmin
   pgadmin:
     image: dpage/pgadmin4
@@ -276,3 +294,4 @@ volumes:
   orders_data:
   customers_data:
   auth_data:
+  grafana_data:

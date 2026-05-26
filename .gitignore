@@ -39,3 +39,8 @@ build/
 ### IA AGENTS ###
 GEMINI.md
 AGENTS.md
+
+# logs
+logs/
+*.log
+*.log.*
