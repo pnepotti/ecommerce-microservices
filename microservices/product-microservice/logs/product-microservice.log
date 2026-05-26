@@ -1,34 +1,34 @@
-2026-05-25 03:28:28 - main - INFO - c.p.e.p.ProductMicroserviceApplication - Starting ProductMicroserviceApplication v0.0.1-SNAPSHOT using Java 25.0.3 with PID 1 (/app/app.jar started by root in /app)
-2026-05-25 03:28:28 - main - INFO - c.p.e.p.ProductMicroserviceApplication - The following 1 profile is active: "docker"
-2026-05-25 03:28:29 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server:8888
-2026-05-25 03:28:29 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=application, profiles=[default], label=null, version=null, state=null
-2026-05-25 03:28:29 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
-2026-05-25 03:28:29 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/product-microservice/default": Connection refused. Will be trying the next url if available
-2026-05-25 03:28:29 - main - WARN - o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@453d496b uris = array<String>['http://localhost:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8888/product-microservice/default": Connection refused
-2026-05-25 03:28:29 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server:8888
-2026-05-25 03:28:29 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=product-microservice, profiles=[docker], label=null, version=null, state=null
-2026-05-25 03:28:29 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server:8888
-2026-05-25 03:28:29 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=product-microservice, profiles=[default], label=null, version=null, state=null
-2026-05-25 03:28:29 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
-2026-05-25 03:28:29 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/product-microservice/docker": Connection refused. Will be trying the next url if available
-2026-05-25 03:28:29 - main - WARN - o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@14379273 uris = array<String>['http://localhost:8888'], optional = true, profiles = 'docker']): I/O error on GET request for "http://localhost:8888/product-microservice/docker": Connection refused
-2026-05-25 03:28:29 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
-2026-05-25 03:28:29 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/product-microservice/default": Connection refused. Will be trying the next url if available
-2026-05-25 03:28:29 - main - WARN - o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@7918c7f8 uris = array<String>['http://localhost:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8888/product-microservice/default": Connection refused
-2026-05-25 03:28:33 - main - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-05-25 03:28:34 - main - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 602 ms. Found 2 JPA repository interfaces.
-2026-05-25 03:28:36 - main - INFO - o.s.cloud.context.scope.GenericScope - BeanFactory id=4789c623-84b4-3b47-8f8d-0c0a991f8220
-2026-05-25 03:28:37 - main - INFO - o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8084 (http)
-2026-05-25 03:28:37 - main - INFO - o.a.catalina.core.StandardService - Starting service [Tomcat]
-2026-05-25 03:28:37 - main - INFO - o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.21]
-2026-05-25 03:28:37 - main - INFO - o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 8492 ms
-2026-05-25 03:28:38 - main - INFO - org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-05-25 03:28:39 - main - INFO - org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.12.Final
-2026-05-25 03:28:41 - main - INFO - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-05-25 03:28:41 - main - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2026-05-25 03:28:41 - main - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2026-05-25 03:28:41 - main - WARN - org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-05-25 03:28:42 - main - INFO - o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+2026-05-26 00:12:14 - main - INFO - c.p.e.p.ProductMicroserviceApplication - Starting ProductMicroserviceApplication v0.0.1-SNAPSHOT using Java 25.0.3 with PID 1 (/app/app.jar started by root in /app)
+2026-05-26 00:12:14 - main - INFO - c.p.e.p.ProductMicroserviceApplication - The following 1 profile is active: "docker"
+2026-05-26 00:12:14 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server:8888
+2026-05-26 00:12:14 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=application, profiles=[default], label=null, version=null, state=null
+2026-05-26 00:12:14 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2026-05-26 00:12:14 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/product-microservice/default": Connection refused. Will be trying the next url if available
+2026-05-26 00:12:14 - main - WARN - o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@453d496b uris = array<String>['http://localhost:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8888/product-microservice/default": Connection refused
+2026-05-26 00:12:14 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server:8888
+2026-05-26 00:12:14 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=product-microservice, profiles=[docker], label=null, version=null, state=null
+2026-05-26 00:12:14 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server:8888
+2026-05-26 00:12:14 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=product-microservice, profiles=[default], label=null, version=null, state=null
+2026-05-26 00:12:14 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2026-05-26 00:12:14 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/product-microservice/docker": Connection refused. Will be trying the next url if available
+2026-05-26 00:12:14 - main - WARN - o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@14379273 uris = array<String>['http://localhost:8888'], optional = true, profiles = 'docker']): I/O error on GET request for "http://localhost:8888/product-microservice/docker": Connection refused
+2026-05-26 00:12:14 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2026-05-26 00:12:14 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/product-microservice/default": Connection refused. Will be trying the next url if available
+2026-05-26 00:12:14 - main - WARN - o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@7918c7f8 uris = array<String>['http://localhost:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8888/product-microservice/default": Connection refused
+2026-05-26 00:12:20 - main - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-26 00:12:21 - main - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 727 ms. Found 2 JPA repository interfaces.
+2026-05-26 00:12:22 - main - INFO - o.s.cloud.context.scope.GenericScope - BeanFactory id=679ab4d9-7598-3579-8073-15889d36ac7c
+2026-05-26 00:12:24 - main - INFO - o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8084 (http)
+2026-05-26 00:12:24 - main - INFO - o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-05-26 00:12:24 - main - INFO - o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-26 00:12:24 - main - INFO - o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 10102 ms
+2026-05-26 00:12:26 - main - INFO - org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-26 00:12:26 - main - INFO - org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-05-26 00:12:29 - main - INFO - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-26 00:12:29 - main - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-05-26 00:12:29 - main - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-05-26 00:12:30 - main - WARN - org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-26 00:12:30 - main - INFO - o.hibernate.orm.connections.pooling - HHH10001005: Database info:
 	Database JDBC URL [jdbc:postgresql://product_db:5432/productdb]
 	Database driver: PostgreSQL JDBC Driver
 	Database dialect: PostgreSQLDialect
@@ -40,91 +40,92 @@
 	Pool: DataSourceConnectionProvider
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2026-05-25 03:28:44 - main - INFO - org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-05-25 03:28:44 - main - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-05-25 03:28:45 - main - INFO - o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-05-25 03:28:46 - main - WARN - o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-05-25 03:28:48 - main - INFO - o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestClient.
-2026-05-25 03:28:48 - main - WARN - o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2026-05-25 03:28:48 - main - INFO - o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
-2026-05-25 03:28:48 - main - INFO - o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
-2026-05-25 03:28:49 - main - INFO - c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
-2026-05-25 03:28:49 - main - INFO - c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-25 03:28:49 - main - INFO - c.netflix.discovery.DiscoveryClient - Disable delta property : false
-2026-05-25 03:28:49 - main - INFO - c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
-2026-05-25 03:28:49 - main - INFO - c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
-2026-05-25 03:28:49 - main - INFO - c.netflix.discovery.DiscoveryClient - Application is null : false
-2026-05-25 03:28:49 - main - INFO - c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
-2026-05-25 03:28:49 - main - INFO - c.netflix.discovery.DiscoveryClient - Application version is -1: true
-2026-05-25 03:28:49 - main - INFO - c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
-2026-05-25 03:28:50 - main - INFO - c.netflix.discovery.DiscoveryClient - The response status is 200
-2026-05-25 03:28:50 - main - INFO - c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
-2026-05-25 03:28:50 - main - INFO - c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
-2026-05-25 03:28:50 - main - INFO - c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1779679730609 with initial instances count: 0
-2026-05-25 03:28:50 - main - INFO - o.s.c.n.e.s.EurekaServiceRegistry - Registering application PRODUCT-MICROSERVICE with eureka with status UP
-2026-05-25 03:28:50 - main - INFO - c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1779679730621, current=UP, previous=STARTING]
-2026-05-25 03:28:50 - DiscoveryClient-InstanceInfoReplicator-%d - INFO - c.netflix.discovery.DiscoveryClient - DiscoveryClient_PRODUCT-MICROSERVICE/7821a170f541:product-microservice:8084: registering service...
-2026-05-25 03:28:50 - main - INFO - o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8084 (http) with context path '/'
-2026-05-25 03:28:50 - main - INFO - o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8084
-2026-05-25 03:28:50 - main - INFO - c.p.e.p.ProductMicroserviceApplication - Started ProductMicroserviceApplication in 28.277 seconds (process running for 30.797)
-2026-05-25 03:28:51 - DiscoveryClient-InstanceInfoReplicator-%d - INFO - c.netflix.discovery.DiscoveryClient - DiscoveryClient_PRODUCT-MICROSERVICE/7821a170f541:product-microservice:8084 - registration status: 204
-2026-05-25 03:29:00 - http-nio-8084-exec-1 - INFO - o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-05-25 03:29:00 - http-nio-8084-exec-1 - INFO - o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2026-05-25 03:29:00 - http-nio-8084-exec-1 - INFO - o.s.web.servlet.DispatcherServlet - Completed initialization in 5 ms
-2026-05-25 03:29:20 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Disable delta property : false
-2026-05-25 03:29:20 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
-2026-05-25 03:29:20 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
-2026-05-25 03:29:20 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Application is null : false
-2026-05-25 03:29:20 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
-2026-05-25 03:29:20 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Application version is -1: false
-2026-05-25 03:29:20 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
-2026-05-25 03:29:20 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - The response status is 200
-2026-05-25 03:33:49 - AsyncResolver-bootstrap-executor-%d - INFO - c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-25 03:36:48 - SpringApplicationShutdownHook - INFO - o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application PRODUCT-MICROSERVICE with eureka with status DOWN
-2026-05-25 03:36:48 - SpringApplicationShutdownHook - INFO - c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1779680208587, current=DOWN, previous=UP]
-2026-05-25 03:36:48 - DiscoveryClient-InstanceInfoReplicator-%d - INFO - c.netflix.discovery.DiscoveryClient - DiscoveryClient_PRODUCT-MICROSERVICE/7821a170f541:product-microservice:8084: registering service...
-2026-05-25 03:36:48 - SpringApplicationShutdownHook - INFO - o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-2026-05-25 03:36:48 - DiscoveryClient-InstanceInfoReplicator-%d - INFO - c.netflix.discovery.DiscoveryClient - DiscoveryClient_PRODUCT-MICROSERVICE/7821a170f541:product-microservice:8084 - registration status: 204
-2026-05-25 03:36:48 - tomcat-shutdown - INFO - o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
-2026-05-25 03:36:48 - SpringApplicationShutdownHook - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-05-25 03:36:48 - SpringApplicationShutdownHook - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2026-05-25 03:36:48 - SpringApplicationShutdownHook - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2026-05-25 03:36:48 - SpringApplicationShutdownHook - INFO - c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
-2026-05-25 03:36:51 - SpringApplicationShutdownHook - INFO - c.netflix.discovery.DiscoveryClient - Unregistering ...
-2026-05-25 03:36:51 - DiscoveryClient-%d - WARN - c.n.discovery.TimedSupervisorTask - task supervisor shutting down, can't accept the task
-2026-05-25 03:36:51 - SpringApplicationShutdownHook - INFO - c.netflix.discovery.DiscoveryClient - DiscoveryClient_PRODUCT-MICROSERVICE/7821a170f541:product-microservice:8084 - deregister  status: 200
-2026-05-25 03:36:51 - SpringApplicationShutdownHook - INFO - c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
-2026-05-25 03:54:57 - main - INFO - c.p.e.p.ProductMicroserviceApplication - Starting ProductMicroserviceApplication v0.0.1-SNAPSHOT using Java 25.0.3 with PID 1 (/app/app.jar started by root in /app)
-2026-05-25 03:54:57 - main - INFO - c.p.e.p.ProductMicroserviceApplication - The following 1 profile is active: "docker"
-2026-05-25 03:54:58 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server:8888
-2026-05-25 03:54:58 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=application, profiles=[default], label=null, version=null, state=null
-2026-05-25 03:54:58 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
-2026-05-25 03:54:58 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/product-microservice/default": Connection refused. Will be trying the next url if available
-2026-05-25 03:54:58 - main - WARN - o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@453d496b uris = array<String>['http://localhost:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8888/product-microservice/default": Connection refused
-2026-05-25 03:54:58 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server:8888
-2026-05-25 03:54:58 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=product-microservice, profiles=[docker], label=null, version=null, state=null
-2026-05-25 03:54:58 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server:8888
-2026-05-25 03:54:58 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=product-microservice, profiles=[default], label=null, version=null, state=null
-2026-05-25 03:54:58 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
-2026-05-25 03:54:58 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/product-microservice/docker": Connection refused. Will be trying the next url if available
-2026-05-25 03:54:58 - main - WARN - o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@14379273 uris = array<String>['http://localhost:8888'], optional = true, profiles = 'docker']): I/O error on GET request for "http://localhost:8888/product-microservice/docker": Connection refused
-2026-05-25 03:54:58 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
-2026-05-25 03:54:58 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/product-microservice/default": Connection refused. Will be trying the next url if available
-2026-05-25 03:54:58 - main - WARN - o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@7918c7f8 uris = array<String>['http://localhost:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8888/product-microservice/default": Connection refused
-2026-05-25 03:55:04 - main - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-05-25 03:55:05 - main - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 928 ms. Found 2 JPA repository interfaces.
-2026-05-25 03:55:08 - main - INFO - o.s.cloud.context.scope.GenericScope - BeanFactory id=4789c623-84b4-3b47-8f8d-0c0a991f8220
-2026-05-25 03:55:10 - main - INFO - o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8084 (http)
-2026-05-25 03:55:11 - main - INFO - o.a.catalina.core.StandardService - Starting service [Tomcat]
-2026-05-25 03:55:11 - main - INFO - o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.21]
-2026-05-25 03:55:11 - main - INFO - o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 12824 ms
-2026-05-25 03:55:13 - main - INFO - org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-05-25 03:55:14 - main - INFO - org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.12.Final
-2026-05-25 03:55:16 - main - INFO - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-05-25 03:55:16 - main - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2026-05-25 03:55:16 - main - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2026-05-25 03:55:17 - main - WARN - org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-05-25 03:55:17 - main - INFO - o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+2026-05-26 00:12:34 - main - INFO - org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-26 00:12:34 - main - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-26 00:12:34 - main - INFO - o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-26 00:12:35 - main - WARN - o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-26 00:12:38 - main - INFO - o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestClient.
+2026-05-26 00:12:38 - main - WARN - o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-05-26 00:12:38 - main - INFO - o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator'
+2026-05-26 00:12:38 - main - INFO - o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2026-05-26 00:12:38 - main - INFO - c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2026-05-26 00:12:38 - main - INFO - c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-05-26 00:12:38 - main - INFO - c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2026-05-26 00:12:38 - main - INFO - c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2026-05-26 00:12:38 - main - INFO - c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2026-05-26 00:12:38 - main - INFO - c.netflix.discovery.DiscoveryClient - Application is null : false
+2026-05-26 00:12:38 - main - INFO - c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2026-05-26 00:12:38 - main - INFO - c.netflix.discovery.DiscoveryClient - Application version is -1: true
+2026-05-26 00:12:38 - main - INFO - c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2026-05-26 00:12:39 - main - INFO - c.netflix.discovery.DiscoveryClient - The response status is 200
+2026-05-26 00:12:39 - main - INFO - c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2026-05-26 00:12:39 - main - INFO - c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-05-26 00:12:39 - main - INFO - c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1779754359697 with initial instances count: 0
+2026-05-26 00:12:39 - main - INFO - o.s.c.n.e.s.EurekaServiceRegistry - Registering application PRODUCT-MICROSERVICE with eureka with status UP
+2026-05-26 00:12:39 - main - INFO - c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1779754359714, current=UP, previous=STARTING]
+2026-05-26 00:12:39 - DiscoveryClient-InstanceInfoReplicator-%d - INFO - c.netflix.discovery.DiscoveryClient - DiscoveryClient_PRODUCT-MICROSERVICE/cc84d1287685:product-microservice:8084: registering service...
+2026-05-26 00:12:39 - main - INFO - o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8084 (http) with context path '/'
+2026-05-26 00:12:39 - main - INFO - o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8084
+2026-05-26 00:12:39 - DiscoveryClient-InstanceInfoReplicator-%d - INFO - c.netflix.discovery.DiscoveryClient - DiscoveryClient_PRODUCT-MICROSERVICE/cc84d1287685:product-microservice:8084 - registration status: 204
+2026-05-26 00:12:39 - main - INFO - c.p.e.p.ProductMicroserviceApplication - Started ProductMicroserviceApplication in 31.969 seconds (process running for 34.513)
+2026-05-26 00:12:46 - http-nio-8084-exec-1 - INFO - o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-26 00:12:46 - http-nio-8084-exec-1 - INFO - o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-05-26 00:12:46 - http-nio-8084-exec-1 - INFO - o.s.web.servlet.DispatcherServlet - Completed initialization in 6 ms
+2026-05-26 00:13:09 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2026-05-26 00:13:09 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2026-05-26 00:13:09 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2026-05-26 00:13:09 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Application is null : false
+2026-05-26 00:13:09 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2026-05-26 00:13:09 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Application version is -1: false
+2026-05-26 00:13:09 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2026-05-26 00:13:09 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - The response status is 200
+2026-05-26 00:17:38 - AsyncResolver-bootstrap-executor-%d - INFO - c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-05-26 00:22:38 - AsyncResolver-bootstrap-executor-%d - INFO - c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-05-26 00:27:38 - AsyncResolver-bootstrap-executor-%d - INFO - c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-05-26 00:30:11 - SpringApplicationShutdownHook - INFO - o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application PRODUCT-MICROSERVICE with eureka with status DOWN
+2026-05-26 00:30:11 - SpringApplicationShutdownHook - INFO - c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1779755411603, current=DOWN, previous=UP]
+2026-05-26 00:30:11 - DiscoveryClient-InstanceInfoReplicator-%d - INFO - c.netflix.discovery.DiscoveryClient - DiscoveryClient_PRODUCT-MICROSERVICE/cc84d1287685:product-microservice:8084: registering service...
+2026-05-26 00:30:11 - SpringApplicationShutdownHook - INFO - o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-26 00:30:11 - tomcat-shutdown - INFO - o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-05-26 00:30:11 - DiscoveryClient-InstanceInfoReplicator-%d - INFO - c.netflix.discovery.DiscoveryClient - DiscoveryClient_PRODUCT-MICROSERVICE/cc84d1287685:product-microservice:8084 - registration status: 204
+2026-05-26 00:30:11 - SpringApplicationShutdownHook - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-26 00:30:11 - SpringApplicationShutdownHook - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-05-26 00:30:11 - SpringApplicationShutdownHook - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-05-26 00:30:11 - SpringApplicationShutdownHook - INFO - c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
+2026-05-26 00:30:14 - SpringApplicationShutdownHook - INFO - c.netflix.discovery.DiscoveryClient - Unregistering ...
+2026-05-26 00:30:14 - SpringApplicationShutdownHook - INFO - c.netflix.discovery.DiscoveryClient - DiscoveryClient_PRODUCT-MICROSERVICE/cc84d1287685:product-microservice:8084 - deregister  status: 200
+2026-05-26 00:30:14 - SpringApplicationShutdownHook - INFO - c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
+2026-05-26 00:34:49 - main - INFO - c.p.e.p.ProductMicroserviceApplication - Starting ProductMicroserviceApplication v0.0.1-SNAPSHOT using Java 25.0.3 with PID 1 (/app/app.jar started by root in /app)
+2026-05-26 00:34:49 - main - INFO - c.p.e.p.ProductMicroserviceApplication - The following 1 profile is active: "docker"
+2026-05-26 00:34:50 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server:8888
+2026-05-26 00:34:50 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=application, profiles=[default], label=null, version=null, state=null
+2026-05-26 00:34:50 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2026-05-26 00:34:50 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/product-microservice/default": Connection refused. Will be trying the next url if available
+2026-05-26 00:34:50 - main - WARN - o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@47ec7422 uris = array<String>['http://localhost:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8888/product-microservice/default": Connection refused
+2026-05-26 00:34:50 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server:8888
+2026-05-26 00:34:50 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=product-microservice, profiles=[docker], label=null, version=null, state=null
+2026-05-26 00:34:50 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server:8888
+2026-05-26 00:34:50 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=product-microservice, profiles=[default], label=null, version=null, state=null
+2026-05-26 00:34:50 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2026-05-26 00:34:50 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/product-microservice/docker": Connection refused. Will be trying the next url if available
+2026-05-26 00:34:50 - main - WARN - o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@7e2f86e6 uris = array<String>['http://localhost:8888'], optional = true, profiles = 'docker']): I/O error on GET request for "http://localhost:8888/product-microservice/docker": Connection refused
+2026-05-26 00:34:50 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2026-05-26 00:34:50 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/product-microservice/default": Connection refused. Will be trying the next url if available
+2026-05-26 00:34:50 - main - WARN - o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@4d774249 uris = array<String>['http://localhost:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8888/product-microservice/default": Connection refused
+2026-05-26 00:34:56 - main - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-26 00:34:57 - main - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 855 ms. Found 2 JPA repository interfaces.
+2026-05-26 00:34:59 - main - INFO - o.s.cloud.context.scope.GenericScope - BeanFactory id=b65a9594-4e47-3f70-b3de-d3cc673cb4c8
+2026-05-26 00:35:01 - main - INFO - o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8084 (http)
+2026-05-26 00:35:01 - main - INFO - o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-05-26 00:35:01 - main - INFO - o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-26 00:35:01 - main - INFO - o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 11342 ms
+2026-05-26 00:35:03 - main - INFO - org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-26 00:35:03 - main - INFO - org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-05-26 00:35:06 - main - INFO - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-26 00:35:07 - main - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-05-26 00:35:07 - main - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-05-26 00:35:08 - main - WARN - org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-26 00:35:08 - main - INFO - o.hibernate.orm.connections.pooling - HHH10001005: Database info:
 	Database JDBC URL [jdbc:postgresql://product_db:5432/productdb]
 	Database driver: PostgreSQL JDBC Driver
 	Database dialect: PostgreSQLDialect
@@ -136,115 +137,93 @@
 	Pool: DataSourceConnectionProvider
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2026-05-25 03:55:20 - main - INFO - org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-05-25 03:55:20 - main - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-05-25 03:55:21 - main - INFO - o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-05-25 03:55:22 - main - WARN - o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-05-25 03:55:26 - main - INFO - o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestClient.
-2026-05-25 03:55:26 - main - WARN - o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2026-05-25 03:55:27 - main - INFO - o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
-2026-05-25 03:55:27 - main - INFO - o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
-2026-05-25 03:55:27 - main - INFO - c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
-2026-05-25 03:55:27 - main - INFO - c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-25 03:55:27 - main - INFO - c.netflix.discovery.DiscoveryClient - Disable delta property : false
-2026-05-25 03:55:27 - main - INFO - c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
-2026-05-25 03:55:27 - main - INFO - c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
-2026-05-25 03:55:27 - main - INFO - c.netflix.discovery.DiscoveryClient - Application is null : false
-2026-05-25 03:55:27 - main - INFO - c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
-2026-05-25 03:55:27 - main - INFO - c.netflix.discovery.DiscoveryClient - Application version is -1: true
-2026-05-25 03:55:27 - main - INFO - c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
-2026-05-25 03:55:29 - main - INFO - c.netflix.discovery.DiscoveryClient - The response status is 200
-2026-05-25 03:55:29 - main - INFO - c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
-2026-05-25 03:55:29 - main - INFO - c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
-2026-05-25 03:55:29 - main - INFO - c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1779681329601 with initial instances count: 0
-2026-05-25 03:55:29 - main - INFO - o.s.c.n.e.s.EurekaServiceRegistry - Registering application PRODUCT-MICROSERVICE with eureka with status UP
-2026-05-25 03:55:29 - main - INFO - c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1779681329619, current=UP, previous=STARTING]
-2026-05-25 03:55:29 - DiscoveryClient-InstanceInfoReplicator-%d - INFO - c.netflix.discovery.DiscoveryClient - DiscoveryClient_PRODUCT-MICROSERVICE/ebcbb3c70a93:product-microservice:8084: registering service...
-2026-05-25 03:55:29 - main - INFO - o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8084 (http) with context path '/'
-2026-05-25 03:55:29 - main - INFO - o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8084
-2026-05-25 03:55:29 - main - INFO - c.p.e.p.ProductMicroserviceApplication - Started ProductMicroserviceApplication in 38.57 seconds (process running for 42.569)
-2026-05-25 03:55:29 - DiscoveryClient-InstanceInfoReplicator-%d - INFO - c.netflix.discovery.DiscoveryClient - DiscoveryClient_PRODUCT-MICROSERVICE/ebcbb3c70a93:product-microservice:8084 - registration status: 204
-2026-05-25 03:55:38 - http-nio-8084-exec-1 - INFO - o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-05-25 03:55:38 - http-nio-8084-exec-1 - INFO - o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2026-05-25 03:55:38 - http-nio-8084-exec-1 - INFO - o.s.web.servlet.DispatcherServlet - Completed initialization in 5 ms
-2026-05-25 03:55:59 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Disable delta property : false
-2026-05-25 03:55:59 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
-2026-05-25 03:55:59 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
-2026-05-25 03:55:59 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Application is null : false
-2026-05-25 03:55:59 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
-2026-05-25 03:55:59 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Application version is -1: false
-2026-05-25 03:55:59 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
-2026-05-25 03:55:59 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - The response status is 200
-2026-05-25 03:57:06 - http-nio-8084-exec-7 - WARN - c.p.m.c.GlobalExceptionHandler - Recurso no encontrado: 'api/v1/products'
-2026-05-25 03:57:30 - http-nio-8084-exec-7 - WARN - c.p.m.c.GlobalExceptionHandler - Recurso no encontrado: 'api/v1/productsfee'
-2026-05-25 03:58:00 - SpringApplicationShutdownHook - INFO - o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application PRODUCT-MICROSERVICE with eureka with status DOWN
-2026-05-25 03:58:00 - SpringApplicationShutdownHook - INFO - c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1779681480079, current=DOWN, previous=UP]
-2026-05-25 03:58:00 - DiscoveryClient-InstanceInfoReplicator-%d - INFO - c.netflix.discovery.DiscoveryClient - DiscoveryClient_PRODUCT-MICROSERVICE/ebcbb3c70a93:product-microservice:8084: registering service...
-2026-05-25 03:58:00 - SpringApplicationShutdownHook - INFO - o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-2026-05-25 03:58:00 - DiscoveryClient-InstanceInfoReplicator-%d - INFO - c.netflix.discovery.DiscoveryClient - DiscoveryClient_PRODUCT-MICROSERVICE/ebcbb3c70a93:product-microservice:8084 - registration status: 204
-2026-05-25 03:58:00 - tomcat-shutdown - INFO - o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
-2026-05-25 03:58:00 - SpringApplicationShutdownHook - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-05-25 03:58:00 - SpringApplicationShutdownHook - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2026-05-25 03:58:00 - SpringApplicationShutdownHook - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2026-05-25 03:58:00 - SpringApplicationShutdownHook - INFO - c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
-2026-05-25 03:58:03 - SpringApplicationShutdownHook - INFO - c.netflix.discovery.DiscoveryClient - Unregistering ...
-2026-05-25 03:58:03 - SpringApplicationShutdownHook - INFO - c.netflix.discovery.DiscoveryClient - DiscoveryClient_PRODUCT-MICROSERVICE/ebcbb3c70a93:product-microservice:8084 - deregister  status: 200
-2026-05-25 03:58:03 - SpringApplicationShutdownHook - INFO - c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
-2026-05-25 04:09:35 - main - INFO - c.p.e.p.ProductMicroserviceApplication - Starting ProductMicroserviceApplication v0.0.1-SNAPSHOT using Java 25.0.3 with PID 1 (/app/app.jar started by root in /app)
-2026-05-25 04:09:35 - main - INFO - c.p.e.p.ProductMicroserviceApplication - The following 1 profile is active: "docker"
-2026-05-25 04:09:36 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server:8888
-2026-05-25 04:09:36 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=application, profiles=[default], label=null, version=null, state=null
-2026-05-25 04:09:36 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
-2026-05-25 04:09:36 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/product-microservice/default": Connection refused. Will be trying the next url if available
-2026-05-25 04:09:36 - main - WARN - o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@453d496b uris = array<String>['http://localhost:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8888/product-microservice/default": Connection refused
-2026-05-25 04:09:36 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server:8888
-2026-05-25 04:09:36 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=product-microservice, profiles=[docker], label=null, version=null, state=null
-2026-05-25 04:09:36 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server:8888
-2026-05-25 04:09:36 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=product-microservice, profiles=[default], label=null, version=null, state=null
-2026-05-25 04:09:36 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
-2026-05-25 04:09:36 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/product-microservice/docker": Connection refused. Will be trying the next url if available
-2026-05-25 04:09:36 - main - WARN - o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@14379273 uris = array<String>['http://localhost:8888'], optional = true, profiles = 'docker']): I/O error on GET request for "http://localhost:8888/product-microservice/docker": Connection refused
-2026-05-25 04:09:36 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
-2026-05-25 04:09:36 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/product-microservice/default": Connection refused. Will be trying the next url if available
-2026-05-25 04:09:36 - main - WARN - o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@7918c7f8 uris = array<String>['http://localhost:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8888/product-microservice/default": Connection refused
-2026-05-25 04:09:43 - main - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-05-25 04:09:44 - main - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 848 ms. Found 2 JPA repository interfaces.
-2026-05-25 04:09:47 - main - INFO - o.s.cloud.context.scope.GenericScope - BeanFactory id=4789c623-84b4-3b47-8f8d-0c0a991f8220
-2026-05-25 04:10:47 - main - INFO - c.p.e.p.ProductMicroserviceApplication - Starting ProductMicroserviceApplication v0.0.1-SNAPSHOT using Java 25.0.3 with PID 1 (/app/app.jar started by root in /app)
-2026-05-25 04:10:47 - main - INFO - c.p.e.p.ProductMicroserviceApplication - The following 1 profile is active: "docker"
-2026-05-25 04:10:48 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server:8888
-2026-05-25 04:10:48 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=application, profiles=[default], label=null, version=null, state=null
-2026-05-25 04:10:48 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
-2026-05-25 04:10:48 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/product-microservice/default": Connection refused. Will be trying the next url if available
-2026-05-25 04:10:48 - main - WARN - o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@453d496b uris = array<String>['http://localhost:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8888/product-microservice/default": Connection refused
-2026-05-25 04:10:48 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server:8888
-2026-05-25 04:10:48 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=product-microservice, profiles=[docker], label=null, version=null, state=null
-2026-05-25 04:10:48 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server:8888
-2026-05-25 04:10:48 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=product-microservice, profiles=[default], label=null, version=null, state=null
-2026-05-25 04:10:48 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
-2026-05-25 04:10:48 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/product-microservice/docker": Connection refused. Will be trying the next url if available
-2026-05-25 04:10:48 - main - WARN - o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@14379273 uris = array<String>['http://localhost:8888'], optional = true, profiles = 'docker']): I/O error on GET request for "http://localhost:8888/product-microservice/docker": Connection refused
-2026-05-25 04:10:48 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
-2026-05-25 04:10:48 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/product-microservice/default": Connection refused. Will be trying the next url if available
-2026-05-25 04:10:48 - main - WARN - o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@7918c7f8 uris = array<String>['http://localhost:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8888/product-microservice/default": Connection refused
-2026-05-25 04:10:54 - main - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-05-25 04:10:55 - main - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 811 ms. Found 2 JPA repository interfaces.
-2026-05-25 04:10:58 - main - INFO - o.s.cloud.context.scope.GenericScope - BeanFactory id=4789c623-84b4-3b47-8f8d-0c0a991f8220
-2026-05-25 04:11:00 - main - INFO - o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8084 (http)
-2026-05-25 04:11:00 - main - INFO - o.a.catalina.core.StandardService - Starting service [Tomcat]
-2026-05-25 04:11:00 - main - INFO - o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.21]
-2026-05-25 04:11:00 - main - INFO - o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 12692 ms
-2026-05-25 04:11:02 - main - INFO - org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-05-25 04:11:03 - main - INFO - org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.12.Final
-2026-05-25 04:11:05 - main - INFO - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-05-25 04:11:05 - main - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2026-05-25 04:11:05 - main - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2026-05-25 04:11:06 - main - WARN - org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-05-25 04:11:06 - main - INFO - o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+2026-05-26 00:35:11 - main - INFO - org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-26 00:35:12 - main - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-26 00:35:12 - main - INFO - o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-26 00:35:13 - main - WARN - o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-26 00:35:15 - main - INFO - o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestClient.
+2026-05-26 00:35:16 - main - WARN - o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-05-26 00:35:16 - main - INFO - o.s.b.a.e.web.EndpointLinksResolver - Exposing 3 endpoints beneath base path '/actuator'
+2026-05-26 00:35:16 - main - INFO - o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2026-05-26 00:35:16 - main - INFO - c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2026-05-26 00:35:16 - main - INFO - c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-05-26 00:35:16 - main - INFO - c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2026-05-26 00:35:16 - main - INFO - c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2026-05-26 00:35:16 - main - INFO - c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2026-05-26 00:35:16 - main - INFO - c.netflix.discovery.DiscoveryClient - Application is null : false
+2026-05-26 00:35:16 - main - INFO - c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2026-05-26 00:35:16 - main - INFO - c.netflix.discovery.DiscoveryClient - Application version is -1: true
+2026-05-26 00:35:16 - main - INFO - c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2026-05-26 00:35:17 - main - INFO - c.netflix.discovery.DiscoveryClient - The response status is 200
+2026-05-26 00:35:17 - main - INFO - c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2026-05-26 00:35:17 - main - INFO - c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-05-26 00:35:17 - main - INFO - c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1779755717972 with initial instances count: 0
+2026-05-26 00:35:17 - main - INFO - o.s.c.n.e.s.EurekaServiceRegistry - Registering application PRODUCT-MICROSERVICE with eureka with status UP
+2026-05-26 00:35:17 - main - INFO - c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1779755717985, current=UP, previous=STARTING]
+2026-05-26 00:35:17 - DiscoveryClient-InstanceInfoReplicator-%d - INFO - c.netflix.discovery.DiscoveryClient - DiscoveryClient_PRODUCT-MICROSERVICE/040521bf6d6e:product-microservice:8084: registering service...
+2026-05-26 00:35:18 - main - INFO - o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8084 (http) with context path '/'
+2026-05-26 00:35:18 - main - INFO - o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8084
+2026-05-26 00:35:18 - main - INFO - c.p.e.p.ProductMicroserviceApplication - Started ProductMicroserviceApplication in 35.402 seconds (process running for 38.213)
+2026-05-26 00:35:18 - DiscoveryClient-InstanceInfoReplicator-%d - INFO - c.netflix.discovery.DiscoveryClient - DiscoveryClient_PRODUCT-MICROSERVICE/040521bf6d6e:product-microservice:8084 - registration status: 204
+2026-05-26 00:35:20 - http-nio-8084-exec-1 - INFO - o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-26 00:35:20 - http-nio-8084-exec-1 - INFO - o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-05-26 00:35:20 - http-nio-8084-exec-1 - INFO - o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2026-05-26 00:35:47 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2026-05-26 00:35:47 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2026-05-26 00:35:47 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2026-05-26 00:35:47 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Application is null : false
+2026-05-26 00:35:47 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2026-05-26 00:35:47 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Application version is -1: false
+2026-05-26 00:35:47 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2026-05-26 00:35:48 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - The response status is 200
+2026-05-26 00:36:35 - SpringApplicationShutdownHook - INFO - o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application PRODUCT-MICROSERVICE with eureka with status DOWN
+2026-05-26 00:36:35 - SpringApplicationShutdownHook - INFO - c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1779755795758, current=DOWN, previous=UP]
+2026-05-26 00:36:35 - DiscoveryClient-InstanceInfoReplicator-%d - INFO - c.netflix.discovery.DiscoveryClient - DiscoveryClient_PRODUCT-MICROSERVICE/040521bf6d6e:product-microservice:8084: registering service...
+2026-05-26 00:36:35 - SpringApplicationShutdownHook - INFO - o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-26 00:36:35 - DiscoveryClient-InstanceInfoReplicator-%d - INFO - c.netflix.discovery.DiscoveryClient - DiscoveryClient_PRODUCT-MICROSERVICE/040521bf6d6e:product-microservice:8084 - registration status: 204
+2026-05-26 00:36:35 - tomcat-shutdown - INFO - o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-05-26 00:36:35 - SpringApplicationShutdownHook - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-26 00:36:35 - SpringApplicationShutdownHook - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-05-26 00:36:35 - SpringApplicationShutdownHook - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-05-26 00:36:35 - SpringApplicationShutdownHook - INFO - c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
+2026-05-26 00:36:38 - SpringApplicationShutdownHook - INFO - c.netflix.discovery.DiscoveryClient - Unregistering ...
+2026-05-26 00:36:38 - SpringApplicationShutdownHook - INFO - c.netflix.discovery.DiscoveryClient - DiscoveryClient_PRODUCT-MICROSERVICE/040521bf6d6e:product-microservice:8084 - deregister  status: 200
+2026-05-26 00:36:38 - SpringApplicationShutdownHook - INFO - c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
+2026-05-26 04:04:53 - main - INFO - c.p.e.p.ProductMicroserviceApplication - Starting ProductMicroserviceApplication v0.0.1-SNAPSHOT using Java 25.0.3 with PID 1 (/app/app.jar started by root in /app)
+2026-05-26 04:04:53 - main - INFO - c.p.e.p.ProductMicroserviceApplication - The following 1 profile is active: "docker"
+2026-05-26 04:04:53 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server:8888
+2026-05-26 04:04:53 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=application, profiles=[default], label=null, version=null, state=null
+2026-05-26 04:04:53 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2026-05-26 04:04:53 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/product-microservice/default": Connection refused. Will be trying the next url if available
+2026-05-26 04:04:53 - main - WARN - o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@47ec7422 uris = array<String>['http://localhost:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8888/product-microservice/default": Connection refused
+2026-05-26 04:04:53 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server:8888
+2026-05-26 04:04:53 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=product-microservice, profiles=[docker], label=null, version=null, state=null
+2026-05-26 04:04:53 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server:8888
+2026-05-26 04:04:53 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=product-microservice, profiles=[default], label=null, version=null, state=null
+2026-05-26 04:04:53 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2026-05-26 04:04:53 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/product-microservice/docker": Connection refused. Will be trying the next url if available
+2026-05-26 04:04:53 - main - WARN - o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@7e2f86e6 uris = array<String>['http://localhost:8888'], optional = true, profiles = 'docker']): I/O error on GET request for "http://localhost:8888/product-microservice/docker": Connection refused
+2026-05-26 04:04:53 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2026-05-26 04:04:53 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/product-microservice/default": Connection refused. Will be trying the next url if available
+2026-05-26 04:04:53 - main - WARN - o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@4d774249 uris = array<String>['http://localhost:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8888/product-microservice/default": Connection refused
+2026-05-26 04:05:01 - main - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-26 04:05:02 - main - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 1090 ms. Found 2 JPA repository interfaces.
+2026-05-26 04:05:04 - main - INFO - o.s.cloud.context.scope.GenericScope - BeanFactory id=b65a9594-4e47-3f70-b3de-d3cc673cb4c8
+2026-05-26 04:05:06 - main - INFO - o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8084 (http)
+2026-05-26 04:05:06 - main - INFO - o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-05-26 04:05:06 - main - INFO - o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-26 04:05:06 - main - INFO - o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 12846 ms
+2026-05-26 04:05:08 - main - INFO - org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-26 04:05:08 - main - INFO - org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-05-26 04:05:11 - main - INFO - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-26 04:05:11 - main - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-05-26 04:05:11 - main - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-05-26 04:05:12 - main - WARN - org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-26 04:05:13 - main - INFO - o.hibernate.orm.connections.pooling - HHH10001005: Database info:
 	Database JDBC URL [jdbc:postgresql://product_db:5432/productdb]
 	Database driver: PostgreSQL JDBC Driver
 	Database dialect: PostgreSQLDialect
-	Database version: 16.13
+	Database version: 16.14
 	Default catalog/schema: productdb/public
 	Autocommit mode: undefined/unknown
 	Isolation level: READ_COMMITTED [default READ_COMMITTED]
@@ -252,85 +231,94 @@
 	Pool: DataSourceConnectionProvider
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2026-05-25 04:11:09 - main - INFO - org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-05-25 04:11:09 - main - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-05-25 04:11:09 - main - INFO - o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-05-25 04:11:10 - main - WARN - o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-05-25 04:11:12 - main - INFO - o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestClient.
-2026-05-25 04:11:12 - main - WARN - o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2026-05-25 04:11:13 - main - INFO - o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
-2026-05-25 04:11:13 - main - INFO - o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
-2026-05-25 04:11:13 - main - INFO - c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
-2026-05-25 04:11:13 - main - INFO - c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-25 04:11:13 - main - INFO - c.netflix.discovery.DiscoveryClient - Disable delta property : false
-2026-05-25 04:11:13 - main - INFO - c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
-2026-05-25 04:11:13 - main - INFO - c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
-2026-05-25 04:11:13 - main - INFO - c.netflix.discovery.DiscoveryClient - Application is null : false
-2026-05-25 04:11:13 - main - INFO - c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
-2026-05-25 04:11:13 - main - INFO - c.netflix.discovery.DiscoveryClient - Application version is -1: true
-2026-05-25 04:11:13 - main - INFO - c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
-2026-05-25 04:11:15 - main - INFO - c.netflix.discovery.DiscoveryClient - The response status is 200
-2026-05-25 04:11:15 - main - INFO - c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
-2026-05-25 04:11:15 - main - INFO - c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
-2026-05-25 04:11:15 - main - INFO - c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1779682275019 with initial instances count: 0
-2026-05-25 04:11:15 - main - INFO - o.s.c.n.e.s.EurekaServiceRegistry - Registering application PRODUCT-MICROSERVICE with eureka with status UP
-2026-05-25 04:11:15 - main - INFO - c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1779682275034, current=UP, previous=STARTING]
-2026-05-25 04:11:15 - DiscoveryClient-InstanceInfoReplicator-%d - INFO - c.netflix.discovery.DiscoveryClient - DiscoveryClient_PRODUCT-MICROSERVICE/71b74cf55b23:product-microservice:8084: registering service...
-2026-05-25 04:11:15 - main - INFO - o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8084 (http) with context path '/'
-2026-05-25 04:11:15 - main - INFO - o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8084
-2026-05-25 04:11:15 - main - INFO - c.p.e.p.ProductMicroserviceApplication - Started ProductMicroserviceApplication in 34.432 seconds (process running for 37.69)
-2026-05-25 04:11:15 - DiscoveryClient-InstanceInfoReplicator-%d - INFO - c.netflix.discovery.DiscoveryClient - DiscoveryClient_PRODUCT-MICROSERVICE/71b74cf55b23:product-microservice:8084 - registration status: 204
-2026-05-25 04:11:18 - http-nio-8084-exec-1 - INFO - o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-05-25 04:11:18 - http-nio-8084-exec-1 - INFO - o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2026-05-25 04:11:18 - http-nio-8084-exec-1 - INFO - o.s.web.servlet.DispatcherServlet - Completed initialization in 5 ms
-2026-05-25 04:11:40 - SpringApplicationShutdownHook - INFO - o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application PRODUCT-MICROSERVICE with eureka with status DOWN
-2026-05-25 04:11:40 - SpringApplicationShutdownHook - INFO - c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1779682300058, current=DOWN, previous=UP]
-2026-05-25 04:11:40 - DiscoveryClient-InstanceInfoReplicator-%d - INFO - c.netflix.discovery.DiscoveryClient - DiscoveryClient_PRODUCT-MICROSERVICE/71b74cf55b23:product-microservice:8084: registering service...
-2026-05-25 04:11:40 - SpringApplicationShutdownHook - INFO - o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-2026-05-25 04:11:40 - tomcat-shutdown - INFO - o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
-2026-05-25 04:11:40 - DiscoveryClient-InstanceInfoReplicator-%d - INFO - c.netflix.discovery.DiscoveryClient - DiscoveryClient_PRODUCT-MICROSERVICE/71b74cf55b23:product-microservice:8084 - registration status: 204
-2026-05-25 04:11:40 - SpringApplicationShutdownHook - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-05-25 04:11:40 - SpringApplicationShutdownHook - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2026-05-25 04:11:40 - SpringApplicationShutdownHook - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2026-05-25 04:11:40 - SpringApplicationShutdownHook - INFO - c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
-2026-05-25 04:11:43 - SpringApplicationShutdownHook - INFO - c.netflix.discovery.DiscoveryClient - Unregistering ...
-2026-05-25 04:11:43 - SpringApplicationShutdownHook - INFO - c.netflix.discovery.DiscoveryClient - DiscoveryClient_PRODUCT-MICROSERVICE/71b74cf55b23:product-microservice:8084 - deregister  status: 200
-2026-05-25 04:11:43 - SpringApplicationShutdownHook - INFO - c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
-2026-05-25 04:12:38 - main - INFO - c.p.e.p.ProductMicroserviceApplication - Starting ProductMicroserviceApplication v0.0.1-SNAPSHOT using Java 25.0.3 with PID 1 (/app/app.jar started by root in /app)
-2026-05-25 04:12:38 - main - INFO - c.p.e.p.ProductMicroserviceApplication - The following 1 profile is active: "docker"
-2026-05-25 04:12:38 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server:8888
-2026-05-25 04:12:38 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=application, profiles=[default], label=null, version=null, state=null
-2026-05-25 04:12:38 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
-2026-05-25 04:12:38 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/product-microservice/default": Connection refused. Will be trying the next url if available
-2026-05-25 04:12:38 - main - WARN - o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@453d496b uris = array<String>['http://localhost:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8888/product-microservice/default": Connection refused
-2026-05-25 04:12:38 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server:8888
-2026-05-25 04:12:38 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=product-microservice, profiles=[docker], label=null, version=null, state=null
-2026-05-25 04:12:39 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server:8888
-2026-05-25 04:12:39 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=product-microservice, profiles=[default], label=null, version=null, state=null
-2026-05-25 04:12:39 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
-2026-05-25 04:12:39 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/product-microservice/docker": Connection refused. Will be trying the next url if available
-2026-05-25 04:12:39 - main - WARN - o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@14379273 uris = array<String>['http://localhost:8888'], optional = true, profiles = 'docker']): I/O error on GET request for "http://localhost:8888/product-microservice/docker": Connection refused
-2026-05-25 04:12:39 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
-2026-05-25 04:12:39 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/product-microservice/default": Connection refused. Will be trying the next url if available
-2026-05-25 04:12:39 - main - WARN - o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@7918c7f8 uris = array<String>['http://localhost:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8888/product-microservice/default": Connection refused
-2026-05-25 04:12:46 - main - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-05-25 04:12:47 - main - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 901 ms. Found 2 JPA repository interfaces.
-2026-05-25 04:12:50 - main - INFO - o.s.cloud.context.scope.GenericScope - BeanFactory id=4789c623-84b4-3b47-8f8d-0c0a991f8220
-2026-05-25 04:12:52 - main - INFO - o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8084 (http)
-2026-05-25 04:12:52 - main - INFO - o.a.catalina.core.StandardService - Starting service [Tomcat]
-2026-05-25 04:12:52 - main - INFO - o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.21]
-2026-05-25 04:12:53 - main - INFO - o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 14088 ms
-2026-05-25 04:12:55 - main - INFO - org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-05-25 04:12:56 - main - INFO - org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.12.Final
-2026-05-25 04:12:59 - main - INFO - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-05-25 04:12:59 - main - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2026-05-25 04:12:59 - main - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2026-05-25 04:13:00 - main - WARN - org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-05-25 04:13:00 - main - INFO - o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+2026-05-26 04:05:17 - main - INFO - org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-26 04:05:18 - main - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-26 04:05:18 - main - INFO - o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-26 04:05:19 - main - WARN - o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-26 04:05:22 - main - INFO - o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestClient.
+2026-05-26 04:05:22 - main - WARN - o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-05-26 04:05:22 - main - INFO - o.s.b.a.e.web.EndpointLinksResolver - Exposing 3 endpoints beneath base path '/actuator'
+2026-05-26 04:05:22 - main - INFO - o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2026-05-26 04:05:22 - main - INFO - c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2026-05-26 04:05:22 - main - INFO - c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-05-26 04:05:22 - main - INFO - c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2026-05-26 04:05:22 - main - INFO - c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2026-05-26 04:05:22 - main - INFO - c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2026-05-26 04:05:22 - main - INFO - c.netflix.discovery.DiscoveryClient - Application is null : false
+2026-05-26 04:05:22 - main - INFO - c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2026-05-26 04:05:22 - main - INFO - c.netflix.discovery.DiscoveryClient - Application version is -1: true
+2026-05-26 04:05:22 - main - INFO - c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2026-05-26 04:05:23 - main - INFO - c.netflix.discovery.DiscoveryClient - The response status is 200
+2026-05-26 04:05:23 - main - INFO - c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2026-05-26 04:05:23 - main - INFO - c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-05-26 04:05:23 - main - INFO - c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1779768323681 with initial instances count: 0
+2026-05-26 04:05:23 - main - INFO - o.s.c.n.e.s.EurekaServiceRegistry - Registering application PRODUCT-MICROSERVICE with eureka with status UP
+2026-05-26 04:05:23 - main - INFO - c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1779768323692, current=UP, previous=STARTING]
+2026-05-26 04:05:23 - DiscoveryClient-InstanceInfoReplicator-%d - INFO - c.netflix.discovery.DiscoveryClient - DiscoveryClient_PRODUCT-MICROSERVICE/8625b9489c26:product-microservice:8084: registering service...
+2026-05-26 04:05:23 - main - INFO - o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8084 (http) with context path '/'
+2026-05-26 04:05:23 - main - INFO - o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8084
+2026-05-26 04:05:23 - main - INFO - c.p.e.p.ProductMicroserviceApplication - Started ProductMicroserviceApplication in 39.35 seconds (process running for 42.663)
+2026-05-26 04:05:23 - DiscoveryClient-InstanceInfoReplicator-%d - INFO - c.netflix.discovery.DiscoveryClient - DiscoveryClient_PRODUCT-MICROSERVICE/8625b9489c26:product-microservice:8084 - registration status: 204
+2026-05-26 04:05:32 - http-nio-8084-exec-1 - INFO - o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-26 04:05:32 - http-nio-8084-exec-1 - INFO - o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-05-26 04:05:32 - http-nio-8084-exec-1 - INFO - o.s.web.servlet.DispatcherServlet - Completed initialization in 9 ms
+2026-05-26 04:05:53 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2026-05-26 04:05:53 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2026-05-26 04:05:53 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2026-05-26 04:05:53 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Application is null : false
+2026-05-26 04:05:53 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2026-05-26 04:05:53 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Application version is -1: false
+2026-05-26 04:05:53 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2026-05-26 04:05:53 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - The response status is 200
+2026-05-26 04:10:22 - AsyncResolver-bootstrap-executor-%d - INFO - c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-05-26 04:11:16 - SpringApplicationShutdownHook - INFO - o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application PRODUCT-MICROSERVICE with eureka with status DOWN
+2026-05-26 04:11:16 - SpringApplicationShutdownHook - INFO - c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1779768676016, current=DOWN, previous=UP]
+2026-05-26 04:11:16 - DiscoveryClient-InstanceInfoReplicator-%d - INFO - c.netflix.discovery.DiscoveryClient - DiscoveryClient_PRODUCT-MICROSERVICE/8625b9489c26:product-microservice:8084: registering service...
+2026-05-26 04:11:16 - SpringApplicationShutdownHook - INFO - o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-26 04:11:16 - tomcat-shutdown - INFO - o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-05-26 04:11:16 - DiscoveryClient-InstanceInfoReplicator-%d - INFO - c.netflix.discovery.DiscoveryClient - DiscoveryClient_PRODUCT-MICROSERVICE/8625b9489c26:product-microservice:8084 - registration status: 204
+2026-05-26 04:11:16 - SpringApplicationShutdownHook - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-26 04:11:16 - SpringApplicationShutdownHook - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-05-26 04:11:16 - SpringApplicationShutdownHook - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-05-26 04:11:16 - SpringApplicationShutdownHook - INFO - c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
+2026-05-26 04:11:19 - SpringApplicationShutdownHook - INFO - c.netflix.discovery.DiscoveryClient - Unregistering ...
+2026-05-26 04:11:19 - SpringApplicationShutdownHook - INFO - c.netflix.discovery.DiscoveryClient - DiscoveryClient_PRODUCT-MICROSERVICE/8625b9489c26:product-microservice:8084 - deregister  status: 200
+2026-05-26 04:11:19 - SpringApplicationShutdownHook - INFO - c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
+2026-05-26 04:12:23 - main - INFO - c.p.e.p.ProductMicroserviceApplication - Starting ProductMicroserviceApplication v0.0.1-SNAPSHOT using Java 25.0.3 with PID 1 (/app/app.jar started by root in /app)
+2026-05-26 04:12:23 - main - INFO - c.p.e.p.ProductMicroserviceApplication - The following 1 profile is active: "docker"
+2026-05-26 04:12:23 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server:8888
+2026-05-26 04:12:23 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=application, profiles=[default], label=null, version=null, state=null
+2026-05-26 04:12:23 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2026-05-26 04:12:23 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/product-microservice/default": Connection refused. Will be trying the next url if available
+2026-05-26 04:12:23 - main - WARN - o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@47ec7422 uris = array<String>['http://localhost:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8888/product-microservice/default": Connection refused
+2026-05-26 04:12:23 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server:8888
+2026-05-26 04:12:23 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=product-microservice, profiles=[docker], label=null, version=null, state=null
+2026-05-26 04:12:23 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server:8888
+2026-05-26 04:12:23 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=product-microservice, profiles=[default], label=null, version=null, state=null
+2026-05-26 04:12:23 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2026-05-26 04:12:23 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/product-microservice/docker": Connection refused. Will be trying the next url if available
+2026-05-26 04:12:23 - main - WARN - o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@7e2f86e6 uris = array<String>['http://localhost:8888'], optional = true, profiles = 'docker']): I/O error on GET request for "http://localhost:8888/product-microservice/docker": Connection refused
+2026-05-26 04:12:23 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2026-05-26 04:12:23 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/product-microservice/default": Connection refused. Will be trying the next url if available
+2026-05-26 04:12:23 - main - WARN - o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@4d774249 uris = array<String>['http://localhost:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8888/product-microservice/default": Connection refused
+2026-05-26 04:12:32 - main - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-26 04:12:34 - main - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 1381 ms. Found 2 JPA repository interfaces.
+2026-05-26 04:12:37 - main - INFO - o.s.cloud.context.scope.GenericScope - BeanFactory id=b65a9594-4e47-3f70-b3de-d3cc673cb4c8
+2026-05-26 04:12:40 - main - INFO - o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8084 (http)
+2026-05-26 04:12:40 - main - INFO - o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-05-26 04:12:40 - main - INFO - o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-26 04:12:41 - main - INFO - o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 17202 ms
+2026-05-26 04:12:45 - main - INFO - org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-26 04:12:46 - main - INFO - org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-05-26 04:12:50 - main - INFO - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-26 04:12:50 - main - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-05-26 04:12:50 - main - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-05-26 04:12:52 - main - WARN - org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-26 04:12:52 - main - INFO - o.hibernate.orm.connections.pooling - HHH10001005: Database info:
 	Database JDBC URL [jdbc:postgresql://product_db:5432/productdb]
 	Database driver: PostgreSQL JDBC Driver
 	Database dialect: PostgreSQLDialect
-	Database version: 16.13
+	Database version: 16.14
 	Default catalog/schema: productdb/public
 	Autocommit mode: undefined/unknown
 	Isolation level: READ_COMMITTED [default READ_COMMITTED]
@@ -338,90 +326,41 @@
 	Pool: DataSourceConnectionProvider
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2026-05-25 04:13:03 - main - INFO - org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-05-25 04:13:03 - main - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-05-25 04:13:04 - main - INFO - o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-05-25 04:13:06 - main - WARN - o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-05-25 04:13:10 - main - INFO - o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestClient.
-2026-05-25 04:13:11 - main - WARN - o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2026-05-25 04:13:11 - main - INFO - o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
-2026-05-25 04:13:11 - main - INFO - o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
-2026-05-25 04:13:11 - main - INFO - c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
-2026-05-25 04:13:11 - main - INFO - c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-25 04:13:11 - main - INFO - c.netflix.discovery.DiscoveryClient - Disable delta property : false
-2026-05-25 04:13:11 - main - INFO - c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
-2026-05-25 04:13:11 - main - INFO - c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
-2026-05-25 04:13:11 - main - INFO - c.netflix.discovery.DiscoveryClient - Application is null : false
-2026-05-25 04:13:11 - main - INFO - c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
-2026-05-25 04:13:11 - main - INFO - c.netflix.discovery.DiscoveryClient - Application version is -1: true
-2026-05-25 04:13:11 - main - INFO - c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
-2026-05-25 04:13:13 - main - INFO - c.netflix.discovery.DiscoveryClient - The response status is 200
-2026-05-25 04:13:13 - main - INFO - c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
-2026-05-25 04:13:13 - main - INFO - c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
-2026-05-25 04:13:13 - main - INFO - c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1779682393872 with initial instances count: 0
-2026-05-25 04:13:13 - main - INFO - o.s.c.n.e.s.EurekaServiceRegistry - Registering application PRODUCT-MICROSERVICE with eureka with status UP
-2026-05-25 04:13:13 - main - INFO - c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1779682393886, current=UP, previous=STARTING]
-2026-05-25 04:13:13 - DiscoveryClient-InstanceInfoReplicator-%d - INFO - c.netflix.discovery.DiscoveryClient - DiscoveryClient_PRODUCT-MICROSERVICE/148ce31fe000:product-microservice:8084: registering service...
-2026-05-25 04:13:13 - main - INFO - o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8084 (http) with context path '/'
-2026-05-25 04:13:13 - main - INFO - o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8084
-2026-05-25 04:13:14 - main - INFO - c.p.e.p.ProductMicroserviceApplication - Started ProductMicroserviceApplication in 42.62 seconds (process running for 46.551)
-2026-05-25 04:13:14 - DiscoveryClient-InstanceInfoReplicator-%d - INFO - c.netflix.discovery.DiscoveryClient - DiscoveryClient_PRODUCT-MICROSERVICE/148ce31fe000:product-microservice:8084 - registration status: 204
-2026-05-25 04:13:18 - http-nio-8084-exec-1 - INFO - o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-05-25 04:13:18 - http-nio-8084-exec-1 - INFO - o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2026-05-25 04:13:18 - http-nio-8084-exec-1 - INFO - o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
-2026-05-25 04:13:43 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Disable delta property : false
-2026-05-25 04:13:43 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
-2026-05-25 04:13:43 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
-2026-05-25 04:13:43 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Application is null : false
-2026-05-25 04:13:43 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
-2026-05-25 04:13:43 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Application version is -1: false
-2026-05-25 04:13:43 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
-2026-05-25 04:13:43 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - The response status is 200
-2026-05-25 04:14:55 - SpringApplicationShutdownHook - INFO - o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application PRODUCT-MICROSERVICE with eureka with status DOWN
-2026-05-25 04:14:55 - SpringApplicationShutdownHook - INFO - c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1779682495415, current=DOWN, previous=UP]
-2026-05-25 04:14:55 - DiscoveryClient-InstanceInfoReplicator-%d - INFO - c.netflix.discovery.DiscoveryClient - DiscoveryClient_PRODUCT-MICROSERVICE/148ce31fe000:product-microservice:8084: registering service...
-2026-05-25 04:14:55 - SpringApplicationShutdownHook - INFO - o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-2026-05-25 04:14:55 - tomcat-shutdown - INFO - o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
-2026-05-25 04:14:55 - DiscoveryClient-InstanceInfoReplicator-%d - INFO - c.netflix.discovery.DiscoveryClient - DiscoveryClient_PRODUCT-MICROSERVICE/148ce31fe000:product-microservice:8084 - registration status: 204
-2026-05-25 04:14:55 - SpringApplicationShutdownHook - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-05-25 04:14:55 - SpringApplicationShutdownHook - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2026-05-25 04:14:55 - SpringApplicationShutdownHook - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2026-05-25 04:14:55 - SpringApplicationShutdownHook - INFO - c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
-2026-05-25 04:22:48 - main - INFO - c.p.e.p.ProductMicroserviceApplication - Starting ProductMicroserviceApplication v0.0.1-SNAPSHOT using Java 25.0.3 with PID 1 (/app/app.jar started by root in /app)
-2026-05-25 04:22:48 - main - INFO - c.p.e.p.ProductMicroserviceApplication - The following 1 profile is active: "docker"
-2026-05-25 04:22:48 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server:8888
-2026-05-25 04:22:48 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=application, profiles=[default], label=null, version=null, state=null
-2026-05-25 04:22:48 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
-2026-05-25 04:22:48 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/product-microservice/default": Connection refused. Will be trying the next url if available
-2026-05-25 04:22:48 - main - WARN - o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@453d496b uris = array<String>['http://localhost:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8888/product-microservice/default": Connection refused
-2026-05-25 04:22:48 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server:8888
-2026-05-25 04:22:48 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=product-microservice, profiles=[docker], label=null, version=null, state=null
-2026-05-25 04:22:48 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server:8888
-2026-05-25 04:22:48 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=product-microservice, profiles=[default], label=null, version=null, state=null
-2026-05-25 04:22:48 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
-2026-05-25 04:22:48 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/product-microservice/docker": Connection refused. Will be trying the next url if available
-2026-05-25 04:22:48 - main - WARN - o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@14379273 uris = array<String>['http://localhost:8888'], optional = true, profiles = 'docker']): I/O error on GET request for "http://localhost:8888/product-microservice/docker": Connection refused
-2026-05-25 04:22:48 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
-2026-05-25 04:22:48 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/product-microservice/default": Connection refused. Will be trying the next url if available
-2026-05-25 04:22:48 - main - WARN - o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@7918c7f8 uris = array<String>['http://localhost:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8888/product-microservice/default": Connection refused
-2026-05-25 04:22:55 - main - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-05-25 04:22:56 - main - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 691 ms. Found 2 JPA repository interfaces.
-2026-05-25 04:22:59 - main - INFO - o.s.cloud.context.scope.GenericScope - BeanFactory id=4789c623-84b4-3b47-8f8d-0c0a991f8220
-2026-05-25 04:23:01 - main - INFO - o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8084 (http)
-2026-05-25 04:23:01 - main - INFO - o.a.catalina.core.StandardService - Starting service [Tomcat]
-2026-05-25 04:23:01 - main - INFO - o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.21]
-2026-05-25 04:23:02 - main - INFO - o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 13071 ms
-2026-05-25 04:23:03 - main - INFO - org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-05-25 04:23:04 - main - INFO - org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.12.Final
-2026-05-25 04:23:06 - main - INFO - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-05-25 04:23:07 - main - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2026-05-25 04:23:07 - main - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2026-05-25 04:23:08 - main - WARN - org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-05-25 04:23:08 - main - INFO - o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+2026-05-26 04:16:16 - main - INFO - c.p.e.p.ProductMicroserviceApplication - Starting ProductMicroserviceApplication v0.0.1-SNAPSHOT using Java 25.0.3 with PID 1 (/app/app.jar started by root in /app)
+2026-05-26 04:16:16 - main - INFO - c.p.e.p.ProductMicroserviceApplication - The following 1 profile is active: "docker"
+2026-05-26 04:16:16 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server:8888
+2026-05-26 04:16:16 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=application, profiles=[default], label=null, version=null, state=null
+2026-05-26 04:16:16 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2026-05-26 04:16:16 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/product-microservice/default": Connection refused. Will be trying the next url if available
+2026-05-26 04:16:16 - main - WARN - o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@47ec7422 uris = array<String>['http://localhost:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8888/product-microservice/default": Connection refused
+2026-05-26 04:16:16 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server:8888
+2026-05-26 04:16:16 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=product-microservice, profiles=[docker], label=null, version=null, state=null
+2026-05-26 04:16:16 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server:8888
+2026-05-26 04:16:16 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=product-microservice, profiles=[default], label=null, version=null, state=null
+2026-05-26 04:16:16 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2026-05-26 04:16:16 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/product-microservice/docker": Connection refused. Will be trying the next url if available
+2026-05-26 04:16:16 - main - WARN - o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@7e2f86e6 uris = array<String>['http://localhost:8888'], optional = true, profiles = 'docker']): I/O error on GET request for "http://localhost:8888/product-microservice/docker": Connection refused
+2026-05-26 04:16:16 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2026-05-26 04:16:16 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/product-microservice/default": Connection refused. Will be trying the next url if available
+2026-05-26 04:16:16 - main - WARN - o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@4d774249 uris = array<String>['http://localhost:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8888/product-microservice/default": Connection refused
+2026-05-26 04:16:24 - main - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-26 04:16:26 - main - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 1042 ms. Found 2 JPA repository interfaces.
+2026-05-26 04:16:29 - main - INFO - o.s.cloud.context.scope.GenericScope - BeanFactory id=b65a9594-4e47-3f70-b3de-d3cc673cb4c8
+2026-05-26 04:16:33 - main - INFO - o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8084 (http)
+2026-05-26 04:16:33 - main - INFO - o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-05-26 04:16:33 - main - INFO - o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-26 04:16:33 - main - INFO - o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 17076 ms
+2026-05-26 04:16:36 - main - INFO - org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-26 04:16:37 - main - INFO - org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-05-26 04:16:42 - main - INFO - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-26 04:16:42 - main - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-05-26 04:16:43 - main - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-05-26 04:16:44 - main - WARN - org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-26 04:16:44 - main - INFO - o.hibernate.orm.connections.pooling - HHH10001005: Database info:
 	Database JDBC URL [jdbc:postgresql://product_db:5432/productdb]
 	Database driver: PostgreSQL JDBC Driver
 	Database dialect: PostgreSQLDialect
-	Database version: 16.13
+	Database version: 16.14
 	Default catalog/schema: productdb/public
 	Autocommit mode: undefined/unknown
 	Isolation level: READ_COMMITTED [default READ_COMMITTED]
@@ -429,55 +368,139 @@
 	Pool: DataSourceConnectionProvider
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2026-05-25 04:23:12 - main - INFO - org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-05-25 04:23:12 - main - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-05-25 04:23:13 - main - INFO - o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-05-25 04:23:14 - main - WARN - o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-05-25 04:23:17 - main - INFO - o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestClient.
-2026-05-25 04:23:17 - main - WARN - o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2026-05-25 04:23:17 - main - INFO - o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
-2026-05-25 04:23:17 - main - INFO - o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
-2026-05-25 04:23:17 - main - INFO - c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
-2026-05-25 04:23:17 - main - INFO - c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-25 04:23:17 - main - INFO - c.netflix.discovery.DiscoveryClient - Disable delta property : false
-2026-05-25 04:23:17 - main - INFO - c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
-2026-05-25 04:23:17 - main - INFO - c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
-2026-05-25 04:23:17 - main - INFO - c.netflix.discovery.DiscoveryClient - Application is null : false
-2026-05-25 04:23:17 - main - INFO - c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
-2026-05-25 04:23:17 - main - INFO - c.netflix.discovery.DiscoveryClient - Application version is -1: true
-2026-05-25 04:23:17 - main - INFO - c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
-2026-05-25 04:23:18 - main - INFO - c.netflix.discovery.DiscoveryClient - The response status is 200
-2026-05-25 04:23:18 - main - INFO - c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
-2026-05-25 04:23:18 - main - INFO - c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
-2026-05-25 04:23:18 - main - INFO - c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1779682998896 with initial instances count: 0
-2026-05-25 04:23:18 - main - INFO - o.s.c.n.e.s.EurekaServiceRegistry - Registering application PRODUCT-MICROSERVICE with eureka with status UP
-2026-05-25 04:23:18 - main - INFO - c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1779682998907, current=UP, previous=STARTING]
-2026-05-25 04:23:18 - DiscoveryClient-InstanceInfoReplicator-%d - INFO - c.netflix.discovery.DiscoveryClient - DiscoveryClient_PRODUCT-MICROSERVICE/181222fd2dff:product-microservice:8084: registering service...
-2026-05-25 04:23:18 - main - INFO - o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8084 (http) with context path '/'
-2026-05-25 04:23:18 - main - INFO - o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8084
-2026-05-25 04:23:18 - DiscoveryClient-InstanceInfoReplicator-%d - INFO - c.netflix.discovery.DiscoveryClient - DiscoveryClient_PRODUCT-MICROSERVICE/181222fd2dff:product-microservice:8084 - registration status: 204
-2026-05-25 04:23:19 - main - INFO - c.p.e.p.ProductMicroserviceApplication - Started ProductMicroserviceApplication in 39.216 seconds (process running for 42.771)
-2026-05-25 04:23:27 - http-nio-8084-exec-1 - INFO - o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-05-25 04:23:27 - http-nio-8084-exec-1 - INFO - o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2026-05-25 04:23:27 - http-nio-8084-exec-1 - INFO - o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
-2026-05-25 04:23:48 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Disable delta property : false
-2026-05-25 04:23:48 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
-2026-05-25 04:23:48 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
-2026-05-25 04:23:48 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Application is null : false
-2026-05-25 04:23:48 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
-2026-05-25 04:23:48 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Application version is -1: false
-2026-05-25 04:23:48 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
-2026-05-25 04:23:48 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - The response status is 200
-2026-05-25 04:24:27 - SpringApplicationShutdownHook - INFO - o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application PRODUCT-MICROSERVICE with eureka with status DOWN
-2026-05-25 04:24:27 - SpringApplicationShutdownHook - INFO - c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1779683067442, current=DOWN, previous=UP]
-2026-05-25 04:24:27 - DiscoveryClient-InstanceInfoReplicator-%d - INFO - c.netflix.discovery.DiscoveryClient - DiscoveryClient_PRODUCT-MICROSERVICE/181222fd2dff:product-microservice:8084: registering service...
-2026-05-25 04:24:27 - SpringApplicationShutdownHook - INFO - o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-2026-05-25 04:24:27 - tomcat-shutdown - INFO - o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
-2026-05-25 04:24:27 - DiscoveryClient-InstanceInfoReplicator-%d - INFO - c.netflix.discovery.DiscoveryClient - DiscoveryClient_PRODUCT-MICROSERVICE/181222fd2dff:product-microservice:8084 - registration status: 204
-2026-05-25 04:24:27 - SpringApplicationShutdownHook - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-05-25 04:24:27 - SpringApplicationShutdownHook - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2026-05-25 04:24:27 - SpringApplicationShutdownHook - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2026-05-25 04:24:27 - SpringApplicationShutdownHook - INFO - c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
-2026-05-25 04:24:30 - SpringApplicationShutdownHook - INFO - c.netflix.discovery.DiscoveryClient - Unregistering ...
-2026-05-25 04:24:30 - SpringApplicationShutdownHook - INFO - c.netflix.discovery.DiscoveryClient - DiscoveryClient_PRODUCT-MICROSERVICE/181222fd2dff:product-microservice:8084 - deregister  status: 200
-2026-05-25 04:24:30 - SpringApplicationShutdownHook - INFO - c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
+2026-05-26 04:16:48 - main - INFO - org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-26 04:16:48 - main - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-26 04:16:48 - main - INFO - o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-26 04:16:50 - main - WARN - o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-26 04:16:52 - main - INFO - o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestClient.
+2026-05-26 04:16:53 - main - WARN - o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-05-26 04:16:53 - main - INFO - o.s.b.a.e.web.EndpointLinksResolver - Exposing 3 endpoints beneath base path '/actuator'
+2026-05-26 04:16:53 - main - INFO - o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2026-05-26 04:16:53 - main - INFO - c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2026-05-26 04:16:53 - main - INFO - c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-05-26 04:16:53 - main - INFO - c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2026-05-26 04:16:53 - main - INFO - c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2026-05-26 04:16:53 - main - INFO - c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2026-05-26 04:16:53 - main - INFO - c.netflix.discovery.DiscoveryClient - Application is null : false
+2026-05-26 04:16:53 - main - INFO - c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2026-05-26 04:16:53 - main - INFO - c.netflix.discovery.DiscoveryClient - Application version is -1: true
+2026-05-26 04:16:53 - main - INFO - c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2026-05-26 04:16:54 - main - INFO - c.netflix.discovery.DiscoveryClient - The response status is 200
+2026-05-26 04:16:54 - main - INFO - c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2026-05-26 04:16:54 - main - INFO - c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-05-26 04:16:54 - main - INFO - c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1779769014900 with initial instances count: 0
+2026-05-26 04:16:54 - main - INFO - o.s.c.n.e.s.EurekaServiceRegistry - Registering application PRODUCT-MICROSERVICE with eureka with status UP
+2026-05-26 04:16:54 - main - INFO - c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1779769014908, current=UP, previous=STARTING]
+2026-05-26 04:16:54 - DiscoveryClient-InstanceInfoReplicator-%d - INFO - c.netflix.discovery.DiscoveryClient - DiscoveryClient_PRODUCT-MICROSERVICE/65ae5f971803:product-microservice:8084: registering service...
+2026-05-26 04:16:54 - main - INFO - o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8084 (http) with context path '/'
+2026-05-26 04:16:54 - main - INFO - o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8084
+2026-05-26 04:16:55 - main - INFO - c.p.e.p.ProductMicroserviceApplication - Started ProductMicroserviceApplication in 47.324 seconds (process running for 50.478)
+2026-05-26 04:16:55 - DiscoveryClient-InstanceInfoReplicator-%d - INFO - c.netflix.discovery.DiscoveryClient - DiscoveryClient_PRODUCT-MICROSERVICE/65ae5f971803:product-microservice:8084 - registration status: 204
+2026-05-26 04:16:55 - http-nio-8084-exec-1 - INFO - o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-26 04:16:55 - http-nio-8084-exec-1 - INFO - o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-05-26 04:16:55 - http-nio-8084-exec-1 - INFO - o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-05-26 04:17:24 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2026-05-26 04:17:24 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2026-05-26 04:17:24 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2026-05-26 04:17:24 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Application is null : false
+2026-05-26 04:17:24 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2026-05-26 04:17:24 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Application version is -1: false
+2026-05-26 04:17:24 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2026-05-26 04:17:24 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - The response status is 200
+2026-05-26 04:17:52 - SpringApplicationShutdownHook - INFO - o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application PRODUCT-MICROSERVICE with eureka with status DOWN
+2026-05-26 04:17:52 - SpringApplicationShutdownHook - INFO - c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1779769072208, current=DOWN, previous=UP]
+2026-05-26 04:17:52 - DiscoveryClient-InstanceInfoReplicator-%d - INFO - c.netflix.discovery.DiscoveryClient - DiscoveryClient_PRODUCT-MICROSERVICE/65ae5f971803:product-microservice:8084: registering service...
+2026-05-26 04:17:52 - SpringApplicationShutdownHook - INFO - o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-26 04:17:52 - tomcat-shutdown - INFO - o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-05-26 04:17:52 - DiscoveryClient-InstanceInfoReplicator-%d - INFO - c.netflix.discovery.DiscoveryClient - DiscoveryClient_PRODUCT-MICROSERVICE/65ae5f971803:product-microservice:8084 - registration status: 204
+2026-05-26 04:17:52 - SpringApplicationShutdownHook - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-26 04:17:52 - SpringApplicationShutdownHook - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-05-26 04:17:52 - SpringApplicationShutdownHook - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-05-26 04:17:52 - SpringApplicationShutdownHook - INFO - c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
+2026-05-26 04:17:55 - SpringApplicationShutdownHook - INFO - c.netflix.discovery.DiscoveryClient - Unregistering ...
+2026-05-26 04:17:55 - DiscoveryClient-%d - WARN - c.n.discovery.TimedSupervisorTask - task supervisor shutting down, can't accept the task
+2026-05-26 04:17:55 - SpringApplicationShutdownHook - INFO - c.netflix.discovery.DiscoveryClient - DiscoveryClient_PRODUCT-MICROSERVICE/65ae5f971803:product-microservice:8084 - deregister  status: 200
+2026-05-26 04:17:55 - SpringApplicationShutdownHook - INFO - c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
+2026-05-26 04:19:09 - main - INFO - c.p.e.p.ProductMicroserviceApplication - Starting ProductMicroserviceApplication v0.0.1-SNAPSHOT using Java 25.0.3 with PID 1 (/app/app.jar started by root in /app)
+2026-05-26 04:19:09 - main - INFO - c.p.e.p.ProductMicroserviceApplication - The following 1 profile is active: "docker"
+2026-05-26 04:19:10 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server:8888
+2026-05-26 04:19:10 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=application, profiles=[default], label=null, version=null, state=null
+2026-05-26 04:19:10 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2026-05-26 04:19:10 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/product-microservice/default": Connection refused. Will be trying the next url if available
+2026-05-26 04:19:10 - main - WARN - o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@47ec7422 uris = array<String>['http://localhost:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8888/product-microservice/default": Connection refused
+2026-05-26 04:19:10 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server:8888
+2026-05-26 04:19:10 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=product-microservice, profiles=[docker], label=null, version=null, state=null
+2026-05-26 04:19:10 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server:8888
+2026-05-26 04:19:10 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=product-microservice, profiles=[default], label=null, version=null, state=null
+2026-05-26 04:19:10 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2026-05-26 04:19:10 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/product-microservice/docker": Connection refused. Will be trying the next url if available
+2026-05-26 04:19:10 - main - WARN - o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@7e2f86e6 uris = array<String>['http://localhost:8888'], optional = true, profiles = 'docker']): I/O error on GET request for "http://localhost:8888/product-microservice/docker": Connection refused
+2026-05-26 04:19:10 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2026-05-26 04:19:10 - main - INFO - o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/product-microservice/default": Connection refused. Will be trying the next url if available
+2026-05-26 04:19:10 - main - WARN - o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@4d774249 uris = array<String>['http://localhost:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8888/product-microservice/default": Connection refused
+2026-05-26 04:19:19 - main - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-26 04:19:21 - main - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 1156 ms. Found 2 JPA repository interfaces.
+2026-05-26 04:19:25 - main - INFO - o.s.cloud.context.scope.GenericScope - BeanFactory id=b65a9594-4e47-3f70-b3de-d3cc673cb4c8
+2026-05-26 04:19:29 - main - INFO - o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8084 (http)
+2026-05-26 04:19:29 - main - INFO - o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-05-26 04:19:29 - main - INFO - o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-26 04:19:29 - main - INFO - o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 19457 ms
+2026-05-26 04:19:33 - main - INFO - org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-26 04:19:34 - main - INFO - org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-05-26 04:19:38 - main - INFO - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-26 04:19:39 - main - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-05-26 04:19:39 - main - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-05-26 04:19:40 - main - WARN - org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-26 04:19:40 - main - INFO - o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://product_db:5432/productdb]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.14
+	Default catalog/schema: productdb/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-26 04:19:43 - main - INFO - org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-26 04:19:43 - main - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-26 04:19:44 - main - INFO - o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-26 04:19:46 - main - WARN - o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-26 04:19:50 - main - INFO - o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestClient.
+2026-05-26 04:19:50 - main - WARN - o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-05-26 04:19:50 - main - INFO - o.s.b.a.e.web.EndpointLinksResolver - Exposing 3 endpoints beneath base path '/actuator'
+2026-05-26 04:19:51 - main - INFO - o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2026-05-26 04:19:51 - main - INFO - c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2026-05-26 04:19:51 - main - INFO - c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-05-26 04:19:51 - main - INFO - c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2026-05-26 04:19:51 - main - INFO - c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2026-05-26 04:19:51 - main - INFO - c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2026-05-26 04:19:51 - main - INFO - c.netflix.discovery.DiscoveryClient - Application is null : false
+2026-05-26 04:19:51 - main - INFO - c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2026-05-26 04:19:51 - main - INFO - c.netflix.discovery.DiscoveryClient - Application version is -1: true
+2026-05-26 04:19:51 - main - INFO - c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2026-05-26 04:19:53 - main - INFO - c.netflix.discovery.DiscoveryClient - The response status is 200
+2026-05-26 04:19:53 - main - INFO - c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2026-05-26 04:19:53 - main - INFO - c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-05-26 04:19:53 - main - INFO - c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1779769193573 with initial instances count: 0
+2026-05-26 04:19:53 - main - INFO - o.s.c.n.e.s.EurekaServiceRegistry - Registering application PRODUCT-MICROSERVICE with eureka with status UP
+2026-05-26 04:19:53 - main - INFO - c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1779769193605, current=UP, previous=STARTING]
+2026-05-26 04:19:53 - DiscoveryClient-InstanceInfoReplicator-%d - INFO - c.netflix.discovery.DiscoveryClient - DiscoveryClient_PRODUCT-MICROSERVICE/732e3e8c4915:product-microservice:8084: registering service...
+2026-05-26 04:19:53 - main - INFO - o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8084 (http) with context path '/'
+2026-05-26 04:19:53 - main - INFO - o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8084
+2026-05-26 04:19:53 - main - INFO - c.p.e.p.ProductMicroserviceApplication - Started ProductMicroserviceApplication in 52.746 seconds (process running for 56.458)
+2026-05-26 04:19:53 - DiscoveryClient-InstanceInfoReplicator-%d - INFO - c.netflix.discovery.DiscoveryClient - DiscoveryClient_PRODUCT-MICROSERVICE/732e3e8c4915:product-microservice:8084 - registration status: 204
+2026-05-26 04:19:58 - http-nio-8084-exec-1 - INFO - o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-26 04:19:58 - http-nio-8084-exec-1 - INFO - o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-05-26 04:19:58 - http-nio-8084-exec-1 - INFO - o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-05-26 04:20:23 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2026-05-26 04:20:23 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2026-05-26 04:20:23 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2026-05-26 04:20:23 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Application is null : false
+2026-05-26 04:20:23 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2026-05-26 04:20:23 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Application version is -1: false
+2026-05-26 04:20:23 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2026-05-26 04:20:23 - DiscoveryClient-CacheRefreshExecutor-%d - INFO - c.netflix.discovery.DiscoveryClient - The response status is 200
+2026-05-26 04:24:51 - AsyncResolver-bootstrap-executor-%d - INFO - c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-05-26 04:29:51 - AsyncResolver-bootstrap-executor-%d - INFO - c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
