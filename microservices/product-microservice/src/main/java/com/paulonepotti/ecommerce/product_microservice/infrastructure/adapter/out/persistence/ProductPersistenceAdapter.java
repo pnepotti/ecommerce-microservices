@@ -2,6 +2,7 @@ package com.paulonepotti.ecommerce.product_microservice.infrastructure.adapter.o
 
 import com.paulonepotti.ecommerce.product_microservice.application.port.out.ProductRepositoryPort;
 import com.paulonepotti.ecommerce.product_microservice.domain.exception.ProductNotFoundException;
+import com.paulonepotti.ecommerce.product_microservice.domain.model.PageResponse;
 import com.paulonepotti.ecommerce.product_microservice.domain.model.Product;
 import com.paulonepotti.ecommerce.product_microservice.infrastructure.adapter.out.persistence.entity.ProductEntity;
 import com.paulonepotti.ecommerce.product_microservice.infrastructure.adapter.out.persistence.mapper.PersistenceProductMapper;
@@ -9,10 +10,14 @@ import com.paulonepotti.ecommerce.product_microservice.infrastructure.adapter.ou
 
 import lombok.RequiredArgsConstructor;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
+import java.util.stream.Collectors;
 import java.util.Optional;
 
 @Component
@@ -51,32 +56,21 @@ public class ProductPersistenceAdapter implements ProductRepositoryPort {
         mapper.updateEntityFromDomain(product, entity);
 
         return mapper.toDomain(repository.save(entity));
-}
-
-    @Override
-    @Transactional(readOnly = true)
-    public List<Product> findAll() {
-        List<ProductEntity> entities = repository.findAll();
-        return entities.stream()
-                .map(mapper::toDomain)
-                .toList();
     }
 
     @Override
     @Transactional(readOnly = true)
-    public List<Product> findByName(String name) {
-        List<ProductEntity> entities = repository.findByName(name);
-        return entities.stream()
-                .map(mapper::toDomain)
-                .toList();
-    }
+    public PageResponse<Product> findAll(String name, Long categoryId, int page, int size) {
+        Pageable pageable = PageRequest.of(page, size, Sort.by("name").ascending());
+        Page<ProductEntity> entityPage = repository.findAllWithFilters(name, categoryId, pageable);
 
-    @Override
-    @Transactional(readOnly = true)
-    public List<Product> findByCategory(Long categoryId) {
-        List<ProductEntity> entities = repository.findByCategoryId(categoryId);
-        return entities.stream()
-                .map(mapper::toDomain)
-                .toList();
-    }
+        return new PageResponse<>(
+            entityPage.getContent().stream().map(mapper::toDomain).collect(Collectors.toList()), 
+            entityPage.getNumber(), 
+            entityPage.getSize(), 
+            entityPage.getTotalElements(), 
+            entityPage.getTotalPages(), 
+            entityPage.isLast());    
+        }
+
 }   

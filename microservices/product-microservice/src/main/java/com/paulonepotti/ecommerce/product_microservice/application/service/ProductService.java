@@ -11,6 +11,7 @@ import com.paulonepotti.ecommerce.product_microservice.application.port.out.Cate
 import com.paulonepotti.ecommerce.product_microservice.application.port.out.ProductRepositoryPort;
 import com.paulonepotti.ecommerce.product_microservice.domain.exception.CategoryNotFoundException;
 import com.paulonepotti.ecommerce.product_microservice.domain.exception.ProductNotFoundException;
+import com.paulonepotti.ecommerce.product_microservice.domain.model.PageResponse;
 import com.paulonepotti.ecommerce.product_microservice.domain.model.Product;
 
 public class ProductService implements 
@@ -58,17 +59,11 @@ public class ProductService implements
     }
 
     @Override
-    public List<Product> getAllProducts(String name, Long categoryId) {
-        if (name != null && !name.isEmpty()) {
-            return productRepositoryPort.findByName(name);
-        } else if (categoryId != null) {
-            if (!categoryRepositoryPort.existsById(categoryId)) {
-                throw new CategoryNotFoundException(categoryId);
-            }
-            return productRepositoryPort.findByCategory(categoryId);
-        } else {
-            return productRepositoryPort.findAll();
+    public PageResponse<Product> getAllProducts(String name, Long categoryId, int page, int size) {
+        if (categoryId != null && !categoryRepositoryPort.existsById(categoryId)) {
+            throw new CategoryNotFoundException(categoryId);
         }
+        return productRepositoryPort.findAll(name, categoryId, page, size);
     }
 
     @Override
