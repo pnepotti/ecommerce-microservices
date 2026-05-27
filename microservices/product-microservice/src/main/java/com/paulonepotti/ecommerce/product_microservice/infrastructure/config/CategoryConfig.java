@@ -15,33 +15,33 @@ import com.paulonepotti.ecommerce.product_microservice.application.service.Categ
 public class CategoryConfig {
 
     @Bean
-    public CategoryService categoryService(CategoryRepositoryPort port) {
-        return new CategoryService(port);
+    public CategoryService categoryService(CategoryRepositoryPort categoryPort) {
+        return new CategoryService(categoryPort);
     }
     
     @Bean
-    public CreateCategoryUseCase createCategoryUseCase(CategoryRepositoryPort port) {
-        return new CategoryService(port);
+    public CreateCategoryUseCase createCategoryUseCase(CategoryService categoryService) {
+        return categoryService;
     }
 
     @Bean
-    public GetCategoryUseCase getCategoryUseCase(CategoryRepositoryPort port) {
-        return new CategoryService(port);
+    public GetCategoryUseCase getCategoryUseCase(CategoryService categoryService) {
+        return categoryService;
     }
 
     @Bean
-    public GetAllCategoriesUseCase getAllCategoriesUseCase(CategoryRepositoryPort port) {
-        return new CategoryService(port);
+    public GetAllCategoriesUseCase getAllCategoriesUseCase(CategoryService categoryService) {
+        return categoryService;
     }
 
     @Bean
-    public UpdateCategoryUseCase updateCategoryUseCase(CategoryRepositoryPort port) {
-        return new CategoryService(port);
+    public UpdateCategoryUseCase updateCategoryUseCase(CategoryService categoryService) {
+        return categoryService;
     }   
 
     @Bean 
-    public DeleteCategoryUseCase deleteCategoryUseCase(CategoryRepositoryPort port) {
-        return new CategoryService(port);
+    public DeleteCategoryUseCase deleteCategoryUseCase(CategoryService categoryService) {
+        return categoryService;
     }
 
 }

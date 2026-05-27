@@ -21,28 +21,28 @@ public class ProductConfig {
     }
     
     @Bean
-    public CreateProductUseCase createProductUseCase(ProductRepositoryPort productPort, CategoryRepositoryPort categoryPort) {
-        return new ProductService(productPort, categoryPort);
+    public CreateProductUseCase createProductUseCase(ProductService productService) {
+        return productService;
     }
 
     @Bean
-    public GetProductUseCase getProductUseCase(ProductRepositoryPort productPort, CategoryRepositoryPort categoryPort) {
-        return new ProductService(productPort, categoryPort);
+    public GetProductUseCase getProductUseCase(ProductService productService) {
+        return productService;
     }
 
     @Bean
-    public GetAllProductsUseCase getAllProductsUseCase(ProductRepositoryPort productPort, CategoryRepositoryPort categoryPort) {
-        return new ProductService(productPort, categoryPort);
+    public GetAllProductsUseCase getAllProductsUseCase(ProductService productService) {
+        return productService;
     }
 
     @Bean
-    public UpdateProductUseCase updateProductUseCase(ProductRepositoryPort productPort, CategoryRepositoryPort categoryPort) {
-        return new ProductService(productPort, categoryPort);
+    public UpdateProductUseCase updateProductUseCase(ProductService productService) {
+        return productService;
     }
 
     @Bean
-    public DeleteProductUseCase deleteProductUseCase(ProductRepositoryPort productPort, CategoryRepositoryPort categoryPort) {
-        return new ProductService(productPort, categoryPort);
+    public DeleteProductUseCase deleteProductUseCase(ProductService productService) {
+        return productService;
     }
 
 
