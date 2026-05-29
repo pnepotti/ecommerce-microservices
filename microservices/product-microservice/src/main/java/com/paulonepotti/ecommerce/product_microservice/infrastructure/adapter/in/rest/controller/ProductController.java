@@ -49,7 +49,7 @@ public class ProductController {
         @RequestParam(required = false) Long categoryId,
         @Min(0) @RequestParam(defaultValue = "0") int page,
         @Min(1) @Max(50) @RequestParam(defaultValue = "10") int size) {
-            
+
         PageResponse<Product> productPage = getAllProductsUseCase.getAllProducts(name, categoryId, page, size);
         List<ProductResponse> dtos = productPage.content().stream()
             .map(productMapper::toResponse)

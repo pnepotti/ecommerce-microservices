@@ -1,10 +1,13 @@
 package com.paulonepotti.microservices.common_exceptions;
 
 import java.util.Map;
+import java.util.HashMap;
 
 import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
+
+import jakarta.validation.ConstraintViolationException;
 
 public record ErrorResponse(String code, String message, Map<String, String> errors, String timestamp, String path) {
 
@@ -18,6 +21,16 @@ public record ErrorResponse(String code, String message, Map<String, String> err
     
     public static ErrorResponse ofValidation(Map<String, String> errors, String path) {
         return new ErrorResponse("VALIDATION_ERROR", "Error de validación", errors, now(), path);
+    }
+
+    public static ErrorResponse ofConstraintViolation(ConstraintViolationException ex, String path) {
+        Map<String, String> errors = new HashMap<>();
+        ex.getConstraintViolations().forEach(violation -> {
+            String propertyPath = violation.getPropertyPath().toString();
+            String paramName = propertyPath.substring(propertyPath.lastIndexOf('.') + 1);
+            errors.put(paramName, violation.getMessage());
+        });
+        return new ErrorResponse("CONSTRAINT_VIOLATION", "Error de restricción en parámetros", errors, now(), path);
     }
 
     public static ErrorResponse ofTypeMismatch(MethodArgumentTypeMismatchException ex, String path) {

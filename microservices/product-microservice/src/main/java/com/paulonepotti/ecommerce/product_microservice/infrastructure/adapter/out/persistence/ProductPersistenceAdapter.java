@@ -13,7 +13,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -61,8 +60,10 @@ public class ProductPersistenceAdapter implements ProductRepositoryPort {
     @Override
     @Transactional(readOnly = true)
     public PageResponse<Product> findAll(String name, Long categoryId, int page, int size) {
-        Pageable pageable = PageRequest.of(page, size, Sort.by("name").ascending());
-        Page<ProductEntity> entityPage = repository.findAllWithFilters(name, categoryId, pageable);
+        Pageable pageable = PageRequest.of(page, size);
+        String namePattern = (name != null) ? "%" + name + "%" : null;
+
+        Page<ProductEntity> entityPage = repository.findAllWithFilters(namePattern, categoryId, pageable);
 
         return new PageResponse<>(
             entityPage.getContent().stream().map(mapper::toDomain).collect(Collectors.toList()), 

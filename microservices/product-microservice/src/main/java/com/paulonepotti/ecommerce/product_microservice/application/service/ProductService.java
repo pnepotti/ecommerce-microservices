@@ -1,7 +1,5 @@
 package com.paulonepotti.ecommerce.product_microservice.application.service;
 
-import java.util.List;
-
 import com.paulonepotti.ecommerce.product_microservice.application.port.in.CreateProductUseCase;
 import com.paulonepotti.ecommerce.product_microservice.application.port.in.DeleteProductUseCase;
 import com.paulonepotti.ecommerce.product_microservice.application.port.in.GetAllProductsUseCase;

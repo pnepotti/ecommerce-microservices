@@ -10,7 +10,7 @@ spring:
         webflux:
           routes:
             - id: product-microservice
-              uri: lb://product-microservice # Load Balancing vía Eureka
+              uri: lb://product-microservice
               predicates:
                 - Path=/api/v1/products/**
             - id: order-microservice
@@ -28,30 +28,25 @@ spring:
 
 logging:
   level:
-    root: DEBUG
+    root: INFO
     org.springframework.cloud.gateway: TRACE
     org.springframework.http.server.reactive: DEBUG
     org.springframework.web.reactive: DEBUG
-    reactor.ipc.netty: DEBUG
-    reactor.netty: DEBUG
   pattern:
     console: "%d{yyyy-MM-dd HH:mm:ss} - %thread{10} - %level{5} - %logger{36} - %msg%n"
-    file: "%d{yyyy-MM-dd HH:mm:ss} - %thread{10} - %level{5} - %logger{36} - %msg%n"
-  file:
-    name: logs/api.log    
-    max-size: 10MB
-    max-history: 3
 
 management:
     endpoints:
         web:
             exposure:
-                include: health, info, prometheus
+                include: health, info, prometheus, gateway
     endpoint:
         health:
             show-details: always
+        gateway:
+            enabled: true
 
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://discovery-server:8761/eureka/
