@@ -13,12 +13,13 @@ public enum OrderStatus {
 
     public boolean canTransitionTo(OrderStatus next) {
         return switch (this) {
-            case PENDING    -> next == CONFIRMED || next == CANCELLED;
-            case CONFIRMED  -> next == PAID      || next == CANCELLED;
-            case PAID       -> next == PREPARING || next == REFUNDED;
-            case PREPARING  -> next == SHIPPED;
-            case SHIPPED    -> next == DELIVERED;
-            default         -> false;
+            case PENDING -> next == CONFIRMED || next == CANCELLED;
+            case CONFIRMED -> next == PAID || next == CANCELLED;
+            case PAID -> next == PREPARING || next == CANCELLED || next == REFUNDED;
+            case PREPARING -> next == SHIPPED || next == CANCELLED;
+            case SHIPPED -> next == DELIVERED;
+            case CANCELLED, DELIVERED, REFUNDED -> false; // estados terminales
+            default -> false;
         };
     }
 }

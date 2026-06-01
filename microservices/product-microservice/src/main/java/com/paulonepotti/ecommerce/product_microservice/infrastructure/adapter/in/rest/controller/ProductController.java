@@ -14,6 +14,8 @@ import com.paulonepotti.ecommerce.product_microservice.domain.model.Product;
 import com.paulonepotti.ecommerce.product_microservice.infrastructure.adapter.in.rest.dto.ProductRequest;
 import com.paulonepotti.ecommerce.product_microservice.infrastructure.adapter.in.rest.dto.ProductResponse;
 import com.paulonepotti.ecommerce.product_microservice.infrastructure.adapter.in.rest.mapper.RestProductMapper;
+
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
@@ -25,6 +27,7 @@ import java.util.List;
 @RequestMapping("/api/v1/products")
 @RequiredArgsConstructor
 @Validated
+@Tag(name = "Products", description = "Endpoints para gestionar productos en el sistema de comercio electrónico con microservicios.")
 public class ProductController {
 
     private final CreateProductUseCase createProductUseCase;

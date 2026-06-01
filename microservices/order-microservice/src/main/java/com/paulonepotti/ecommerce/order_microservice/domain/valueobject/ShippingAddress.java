@@ -12,10 +12,10 @@ public class ShippingAddress {
 
     public ShippingAddress(String street, Integer number, String city, String province, String postalCode, String country) {
         
-        if (street  == null || street.isBlank())  throw new IllegalArgumentException("La calle es requerida");
-        if (number  == null || number <= 0)  throw new IllegalArgumentException("El número es requerido y debe ser positivo");
-        if (city    == null || city.isBlank())    throw new IllegalArgumentException("La ciudad es requerida");
-        if (province== null || province.isBlank())throw new IllegalArgumentException("La provincia es requerida");
+        if (street == null || street.isBlank()) throw new IllegalArgumentException("La calle es requerida");
+        if (number == null || number <= 0) throw new IllegalArgumentException("El número es requerido y debe ser positivo");
+        if (city == null || city.isBlank()) throw new IllegalArgumentException("La ciudad es requerida");
+        if (province == null || province.isBlank()) throw new IllegalArgumentException("La provincia es requerida");
         if (postalCode == null || postalCode.isBlank()) throw new IllegalArgumentException("El código postal es requerido");
 
         this.street = street;

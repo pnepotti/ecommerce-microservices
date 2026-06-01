@@ -2,6 +2,7 @@ package com.paulonepotti.ecommerce.order_microservice.domain.model;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.ArrayList;
 import java.util.Collections;
 
 import com.paulonepotti.ecommerce.order_microservice.domain.exception.DomainValidationException;
@@ -16,30 +17,43 @@ public class Order {
     private BigDecimal totalAmount;
 
     public Order(Long customerId, List<OrderItem> items) {
-        if (customerId == null)           throw new DomainValidationException("CustomerId requerido");
+        if (customerId == null) throw new DomainValidationException("CustomerId requerido");
         if (items == null || items.isEmpty()) throw new DomainValidationException("Items requeridos");
 
         this.customerId  = customerId;
-        this.items       = items;
-        this.status      = OrderStatus.PENDING; // siempre arranca en PENDING
-        this.totalAmount = calculateTotal();
+        this.items = new ArrayList<>(items);
+        this.status = OrderStatus.PENDING; // siempre arranca en PENDING
+
+        validateItems(this.items); // validación de negocio: no permitir items con cantidad <= 0
+        this.totalAmount = calculateTotalAmount();
     }
 
-    // Constructor privado para reconstitución desde DB
+    private void validateItems(List<OrderItem> items) {
+        items.forEach(item -> {
+            if (item == null) {
+                throw new DomainValidationException("Los items no pueden ser nulos");
+            }
+            if (item.getQuantity() <= 0) {
+                throw new DomainValidationException("La cantidad de cada item debe ser mayor que cero");
+            }
+            if (item.getProduct() == null) {
+                throw new DomainValidationException("Cada item debe tener un producto asociado");
+            }
+        });
+    }
+
     private Order() {}
 
     public static Order reconstitute(Long id, Long customerId, List<OrderItem> items,
                                      OrderStatus status, BigDecimal totalAmount) {
-        Order order      = new Order();
-        order.id         = id;
+        Order order = new Order();
+        order.id = id;
         order.customerId = customerId;
-        order.items      = items;
-        order.status     = status;        // ← acá sí asignás el status directamente
-        order.totalAmount = totalAmount;  //   porque estás reconstruyendo, no transitando
+        order.items = items;
+        order.status = status;        
+        order.totalAmount = totalAmount; 
         return order;
     }
-
-    // ——— métodos de dominio — la única forma de cambiar el status ———
 
     public void confirm() {
         transitionTo(OrderStatus.CONFIRMED);
@@ -81,25 +95,21 @@ public class Order {
         this.status = next;
     }
 
-    private BigDecimal calculateTotal() {
+    // getters
+    public Long getId() { return id; }
+    public Long getCustomerId() { return customerId; }
+    public OrderStatus getStatus() { return status; }
+    public List<OrderItem> getItems() { return Collections.unmodifiableList(items); }
+    public BigDecimal getTotalAmount() { return totalAmount; }
+
+    private BigDecimal calculateTotalAmount() {
         return items.stream()
             .map(OrderItem::getSubtotal)
             .reduce(BigDecimal.ZERO, BigDecimal::add);
     }
-
-    // getters
-    public Long          getId()          { return id; }
-    public Long          getCustomerId()  { return customerId; }
-    public OrderStatus   getStatus()      { return status; }
-    public List<OrderItem> getItems()     { return Collections.unmodifiableList(items); }
-    public BigDecimal    getTotalAmount() { return totalAmount; }
-
-    public void setId(Long id) { this.id = id; } 
-
+    
     public void recalculateTotal() {
-        this.totalAmount = items.stream()
-            .map(OrderItem::getSubtotal)
-            .reduce(BigDecimal.ZERO, BigDecimal::add);
+        this.totalAmount = calculateTotalAmount();
     }
 
 }

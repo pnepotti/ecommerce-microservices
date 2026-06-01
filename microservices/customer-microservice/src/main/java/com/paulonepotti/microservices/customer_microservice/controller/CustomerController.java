@@ -33,7 +33,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 @RestController
 @RequestMapping("/api/v1/customers")
 @RequiredArgsConstructor
-@Tag(name = "CustomerController", description = "Endpoints para gestionar clientes y sus direcciones")
+@Tag(name = "Customers", description = "Endpoints para gestionar clientes y sus direcciones")
 public class CustomerController {
 
     private final CustomerService customerService;

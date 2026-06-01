@@ -13,6 +13,7 @@ import com.paulonepotti.ecommerce.product_microservice.infrastructure.adapter.in
 import com.paulonepotti.ecommerce.product_microservice.infrastructure.adapter.in.rest.dto.CategoryResponse;
 import com.paulonepotti.ecommerce.product_microservice.infrastructure.adapter.in.rest.mapper.RestCategoryMapper;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
@@ -29,6 +30,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 @RestController
 @RequestMapping("/api/v1/categories")
 @RequiredArgsConstructor
+@Tag(name = "Categories", description = "Endpoints para gestionar categorías de productos en el sistema de comercio electrónico con microservicios.")
 public class CategoryController {
 
     private final CreateCategoryUseCase createCategoryUseCase;
