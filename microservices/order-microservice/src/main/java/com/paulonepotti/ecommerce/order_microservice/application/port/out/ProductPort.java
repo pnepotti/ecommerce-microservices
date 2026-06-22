@@ -4,4 +4,6 @@ import com.paulonepotti.ecommerce.order_microservice.domain.valueobject.ProductS
 
 public interface ProductPort {
     ProductSnapshot getProductById(Long productId);
+    void decreaseStock(Long productId, int quantity);
+    void increaseStock(Long productId, int quantity);
 }

@@ -5,9 +5,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import com.paulonepotti.ecommerce.product_microservice.application.port.in.CreateProductUseCase;
+import com.paulonepotti.ecommerce.product_microservice.application.port.in.DecreaseProductStockUseCase;
 import com.paulonepotti.ecommerce.product_microservice.application.port.in.DeleteProductUseCase;
 import com.paulonepotti.ecommerce.product_microservice.application.port.in.GetAllProductsUseCase;
 import com.paulonepotti.ecommerce.product_microservice.application.port.in.GetProductUseCase;
+import com.paulonepotti.ecommerce.product_microservice.application.port.in.IncreaseProductStockUseCase;
 import com.paulonepotti.ecommerce.product_microservice.application.port.in.UpdateProductUseCase;
 import com.paulonepotti.ecommerce.product_microservice.domain.model.PageResponse;
 import com.paulonepotti.ecommerce.product_microservice.domain.model.Product;
@@ -34,6 +36,8 @@ public class ProductController {
     private final GetProductUseCase getProductUseCase;
     private final GetAllProductsUseCase getAllProductsUseCase;
     private final UpdateProductUseCase updateProductUseCase;
+    private final DecreaseProductStockUseCase decreaseProductStockUseCase;
+    private final IncreaseProductStockUseCase increaseProductStockUseCase;
     private final DeleteProductUseCase deleteProductUseCase;
     private final RestProductMapper productMapper;
 
@@ -83,5 +87,18 @@ public class ProductController {
         return ResponseEntity.ok(response);
     }
     
+    @PatchMapping("/{id}/stock/decrease")
+    public ResponseEntity<ProductResponse> decreaseStock(@PathVariable Long id, @RequestParam @Min(1) int quantity) {
+        Product product = decreaseProductStockUseCase.decreaseStock(id, quantity);
+        ProductResponse response = productMapper.toResponse(product);
+        return ResponseEntity.ok(response);
+    }
+
+    @PatchMapping("/{id}/stock/increase")
+    public ResponseEntity<ProductResponse> increaseStock(@PathVariable Long id, @RequestParam @Min(1) int quantity) {
+        Product product = increaseProductStockUseCase.increaseStock(id, quantity);
+        ProductResponse response = productMapper.toResponse(product);
+        return ResponseEntity.ok(response);
+    }
     
 }

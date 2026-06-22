@@ -1,6 +1,7 @@
 package com.paulonepotti.ecommerce.product_microservice.infrastructure.adapter.out.persistence;
 
 import com.paulonepotti.ecommerce.product_microservice.application.port.out.ProductRepositoryPort;
+import com.paulonepotti.ecommerce.product_microservice.domain.exception.InsufficientStockException;
 import com.paulonepotti.ecommerce.product_microservice.domain.exception.ProductNotFoundException;
 import com.paulonepotti.ecommerce.product_microservice.domain.model.PageResponse;
 import com.paulonepotti.ecommerce.product_microservice.domain.model.Product;
@@ -73,5 +74,26 @@ public class ProductPersistenceAdapter implements ProductRepositoryPort {
             entityPage.getTotalPages(), 
             entityPage.isLast());    
         }
+
+    @Override
+    public Product decreaseStock(Long id, Integer quantity) {
+        int updatedRows = repository.decreaseStock(id, quantity);
+        if (updatedRows == 0) {
+            // Aquí lanzas tu excepción personalizada de negocio
+            throw new InsufficientStockException("No hay stock suficiente o el producto no existe");
+        }
+        return findById(id).orElseThrow(() -> new ProductNotFoundException(id));
+    }
+
+    @Override
+    public Product increaseStock(Long id, Integer quantity) {
+        int updatedRows = repository.increaseStock(id, quantity);
+        if (updatedRows == 0) {
+            // Aquí podrías lanzar una excepción si el producto no existe
+            throw new ProductNotFoundException(id);
+        }
+        return findById(id).orElseThrow(() -> new ProductNotFoundException(id));
+    }
+
 
 }   

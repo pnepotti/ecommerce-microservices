@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import com.paulonepotti.microservices.common_exceptions.ErrorResponse;
 import com.paulonepotti.ecommerce.product_microservice.domain.exception.CategoryNotFoundException;
+import com.paulonepotti.ecommerce.product_microservice.domain.exception.InsufficientStockException;
 import com.paulonepotti.ecommerce.product_microservice.domain.exception.InvalidProductPriceException;
 import com.paulonepotti.ecommerce.product_microservice.domain.exception.ProductNotFoundException;
 import com.paulonepotti.ecommerce.product_microservice.infrastructure.adapter.in.rest.controller.ProductController;
@@ -38,6 +39,14 @@ public class ProductExceptionHandler {
         return ResponseEntity
             .status(HttpStatus.NOT_FOUND)
             .body(ErrorResponse.of("CATEGORY_NOT_FOUND", ex.getMessage()));
+    }
+
+    @ExceptionHandler(InsufficientStockException.class)
+    public ResponseEntity<ErrorResponse> handleInsufficientStock(
+            InsufficientStockException ex) {
+        return ResponseEntity
+            .status(HttpStatus.BAD_REQUEST)
+            .body(ErrorResponse.of("INSUFFICIENT_STOCK", ex.getMessage()));
     }
 
 }

@@ -30,9 +30,12 @@ public class OrderItem {
     }
 
     public void updateProductSnapshot(ProductSnapshot snapshot) {
-        if (snapshot == null) throw new DomainValidationException("El snapshot no puede ser nulo");
+        if (snapshot == null) 
+            throw new DomainValidationException("El snapshot no puede ser nulo");
+        if (snapshot.getPrice() == null || snapshot.getPrice().compareTo(BigDecimal.ZERO) <= 0) 
+            throw new DomainValidationException("El precio del producto debe ser mayor que cero");
         this.product = snapshot;
-        this.unitPrice = snapshot.getPrice(); // <--- Sincronizamos el precio aquí
+        this.unitPrice = snapshot.getPrice(); 
     }
    
     public BigDecimal getSubtotal() {

@@ -18,6 +18,16 @@ public class ProductRestAdapter implements ProductPort {
     public ProductSnapshot getProductById(Long productId) {
         ProductDTO dto = productClient.getProductById(productId);
         return new ProductSnapshot(dto.id(), dto.name(), dto.price(), dto.imageUrl());
+    }
+
+    @Override
+    public void decreaseStock(Long productId, int quantity) {
+        productClient.decreaseStock(productId, quantity);
+    }
+
+    @Override
+    public void increaseStock(Long productId, int quantity) {
+        productClient.increaseStock(productId, quantity);
     }  
 
 }

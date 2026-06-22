@@ -1,9 +1,11 @@
 package com.paulonepotti.ecommerce.product_microservice.infrastructure.config;
 
 import com.paulonepotti.ecommerce.product_microservice.application.port.in.CreateProductUseCase;
+import com.paulonepotti.ecommerce.product_microservice.application.port.in.DecreaseProductStockUseCase;
 import com.paulonepotti.ecommerce.product_microservice.application.port.in.DeleteProductUseCase;
 import com.paulonepotti.ecommerce.product_microservice.application.port.in.GetAllProductsUseCase;
 import com.paulonepotti.ecommerce.product_microservice.application.port.in.GetProductUseCase;
+import com.paulonepotti.ecommerce.product_microservice.application.port.in.IncreaseProductStockUseCase;
 import com.paulonepotti.ecommerce.product_microservice.application.port.in.UpdateProductUseCase;
 import com.paulonepotti.ecommerce.product_microservice.application.port.out.CategoryRepositoryPort;
 import com.paulonepotti.ecommerce.product_microservice.application.port.out.ProductRepositoryPort;
@@ -45,6 +47,14 @@ public class ProductConfig {
         return productService;
     }
 
+    @Bean
+    public DecreaseProductStockUseCase decreaseProductStockUseCase(ProductService productService) {
+        return productService;
+    }   
 
-    
+    @Bean
+    public IncreaseProductStockUseCase increaseProductStockUseCase(ProductService productService) {
+        return productService;
+    }
+
 }

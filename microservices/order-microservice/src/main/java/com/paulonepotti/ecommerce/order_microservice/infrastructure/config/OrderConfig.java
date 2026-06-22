@@ -1,5 +1,6 @@
 package com.paulonepotti.ecommerce.order_microservice.infrastructure.config;
 
+import com.paulonepotti.ecommerce.order_microservice.application.port.out.CustomerPort;
 import com.paulonepotti.ecommerce.order_microservice.application.port.out.OrderRepositoryPort;
 import com.paulonepotti.ecommerce.order_microservice.application.port.out.ProductPort;
 import com.paulonepotti.ecommerce.order_microservice.application.port.in.CancelOrderUseCase;
@@ -24,8 +25,8 @@ public class OrderConfig {
 
     @Bean
     @Transactional
-    public OrderService orderService(OrderRepositoryPort orderRepositoryPort, ProductPort productPort) {
-        return new OrderService(orderRepositoryPort, productPort);
+    public OrderService orderService(OrderRepositoryPort orderRepositoryPort, ProductPort productPort, CustomerPort customerPort) {
+        return new OrderService(orderRepositoryPort, productPort, customerPort);
     }
 
     @Bean

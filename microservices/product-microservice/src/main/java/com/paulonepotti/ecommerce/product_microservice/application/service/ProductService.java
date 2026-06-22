@@ -1,9 +1,11 @@
 package com.paulonepotti.ecommerce.product_microservice.application.service;
 
 import com.paulonepotti.ecommerce.product_microservice.application.port.in.CreateProductUseCase;
+import com.paulonepotti.ecommerce.product_microservice.application.port.in.DecreaseProductStockUseCase;
 import com.paulonepotti.ecommerce.product_microservice.application.port.in.DeleteProductUseCase;
 import com.paulonepotti.ecommerce.product_microservice.application.port.in.GetAllProductsUseCase;
 import com.paulonepotti.ecommerce.product_microservice.application.port.in.GetProductUseCase;
+import com.paulonepotti.ecommerce.product_microservice.application.port.in.IncreaseProductStockUseCase;
 import com.paulonepotti.ecommerce.product_microservice.application.port.in.UpdateProductUseCase;
 import com.paulonepotti.ecommerce.product_microservice.application.port.out.CategoryRepositoryPort;
 import com.paulonepotti.ecommerce.product_microservice.application.port.out.ProductRepositoryPort;
@@ -17,6 +19,8 @@ public class ProductService implements
     GetProductUseCase,
     GetAllProductsUseCase,
     UpdateProductUseCase,
+    DecreaseProductStockUseCase,
+    IncreaseProductStockUseCase,
     DeleteProductUseCase {
 
     private final ProductRepositoryPort productRepositoryPort;  
@@ -66,6 +70,20 @@ public class ProductService implements
 
     @Override
     public Product getProduct(Long id) {
+        return productRepositoryPort.findById(id)
+            .orElseThrow(() -> new ProductNotFoundException(id));
+    }
+
+    @Override
+    public Product increaseStock(Long id, int quantity) {
+        productRepositoryPort.increaseStock(id, quantity);
+        return productRepositoryPort.findById(id)
+            .orElseThrow(() -> new ProductNotFoundException(id));
+    }
+
+    @Override
+    public Product decreaseStock(Long id, int quantity) {
+        productRepositoryPort.decreaseStock(id, quantity);
         return productRepositoryPort.findById(id)
             .orElseThrow(() -> new ProductNotFoundException(id));
     }

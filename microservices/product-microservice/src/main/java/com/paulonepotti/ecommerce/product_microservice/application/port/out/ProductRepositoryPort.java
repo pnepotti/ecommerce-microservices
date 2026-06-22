@@ -12,4 +12,6 @@ public interface ProductRepositoryPort {
     PageResponse<Product> findAll(String name, Long categoryId, int page, int size);
     void deleteById(Long id);
     Product update(Product product);
+    Product decreaseStock(Long id, Integer quantity);
+    Product increaseStock(Long id, Integer quantity);
 }

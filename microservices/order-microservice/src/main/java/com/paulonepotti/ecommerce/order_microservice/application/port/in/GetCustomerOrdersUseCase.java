@@ -1,9 +1,8 @@
 package com.paulonepotti.ecommerce.order_microservice.application.port.in;
 
-import java.util.List;
-
 import com.paulonepotti.ecommerce.order_microservice.domain.model.Order;
+import com.paulonepotti.ecommerce.order_microservice.domain.model.PageResponse;
 
 public interface GetCustomerOrdersUseCase {
-    List<Order> getCustomerOrders(Long customerId);
+    PageResponse<Order> getCustomerOrders(Long customerId, int page, int size);
 }
